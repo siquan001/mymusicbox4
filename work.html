@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜索歌曲工具</title>
+  <style>
+    :root {
+      --primary: #09f;
+      --primary-light: #40b0ff;
+      --secondary: #666;
+      --light: #f5f5f5;
+      --dark: #333;
+      --border: #ddd;
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      --radius: 6px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: var(--dark);
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .container {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    #s {
+      flex: 1;
+      min-width: 250px;
+      padding: 12px 15px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+
+    #s:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.1);
+    }
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .results-section {
+      margin-bottom: 30px;
+    }
+
+    .platform-title {
+      color: var(--dark);
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--light);
+      display: flex;
+      align-items: center;
+    }
+
+    .platform-title::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 24px;
+      background-color: var(--primary);
+      margin-right: 10px;
+      border-radius: 4px;
+    }
+
+    .result-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 25px;
+    }
+
+    .result-container button {
+      background-color: var(--light);
+      color: var(--secondary);
+      padding: 8px 16px;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    .result-container button:hover {
+      background-color: #e9ecef;
+    }
+
+    .result-container button.select {
+      border: 2px solid var(--primary) !important;
+      background-color: rgba(0, 153, 255, 0.05);
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    /* 新增配置项样式 */
+    .config-section {
+      background-color: var(--light);
+      padding: 20px;
+      border-radius: var(--radius);
+      margin: 30px 0;
+    }
+
+    .config-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: var(--dark);
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .build-section {
+      margin: 30px 0;
+    }
+
+    pre {
+      background-color: var(--light);
+      padding: 20px;
+      border-radius: var(--radius);
+      overflow-x: auto;
+      font-size: 14px;
+      color: var(--dark);
+      margin-top: 20px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--secondary);
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .search-box {
+        flex-direction: column;
+      }
+
+      #s {
+        min-width: unset;
+      }
+
+      .config-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="search-box">
+      <input type="search" id="s" placeholder="请输入歌曲名或歌手名...">
+      <button class="btn-primary" onclick="search()">搜索</button>
+    </div>
+
+    <div class="results-section">
+      <h3 class="platform-title">QQ 音乐</h3>
+      <div class="result-container qq-result"></div>
+
+      <h3 class="platform-title">网易云音乐</h3>
+      <div class="result-container netease-result"></div>
+
+      <h3 class="platform-title">歌曲宝</h3>
+      <div class="result-container gequbao-result"></div>
+    </div>
+
+    <!-- 新增配置项区域 -->
+    <div class="config-section">
+      <h3 class="platform-title" style="margin-bottom: 10px; border: none;">自定义配置项</h3>
+      <div class="config-grid">
+        <div class="form-group">
+          <label for="mid">唯一标识 (Mid)</label>
+          <input type="text" id="mid" placeholder="例如: 00---" value="00---">
+        </div>
+        <div class="form-group">
+          <label for="score">歌曲评分 (Score)</label>
+          <input type="number" id="score" min="0" max="100" placeholder="默认80" value="80">
+        </div>
+        <div class="form-group">
+          <label for="tags">歌曲标签 (Tags) - 多个标签用英文逗号分隔</label>
+          <input type="text" id="tags" placeholder="例如: 流行,华语,2025">
+        </div>
+        <div class="form-group">
+          <label for="info">歌曲信息 (Info)</label>
+          <textarea id="info" placeholder="歌曲额外信息，默认'-'">-</textarea>
+        </div>
+      </div>
+    </div>
+    <button class="btn-primary" onclick="build()">生成</button>
+
+    <div class="build-section">
+      <h3 class="platform-title">生成结果</h3>
+      <pre></pre>
+    </div>
+  </div>
+
+  <div class="footer">
+    歌曲搜索工具 © 2025
+  </div>
+
+  <script src="./musicapi.js"></script>
+  <script>
+    var hz = {};
+    var names = null;
+    var artists = null;
+
+    // 搜索功能
+    function search() {
+      var k = document.querySelector("#s").value.trim();
+      if (!k) return alert('搜索关键词不能为空！');
+      reset();
+      d('gequbao');
+      d('qq');
+      d('netease');
+
+      function d(t) {
+        musicapi.search(k, function (res) {
+          if (!res || !res.songs || res.songs.length === 0) {
+            const emptyTip = document.createElement('div');
+            emptyTip.style.color = '#999';
+            emptyTip.style.padding = '10px';
+            emptyTip.textContent = '暂无搜索结果';
+            document.querySelector("." + t + "-result").append(emptyTip);
+            return;
+          }
+
+          res.songs.forEach(function (song) {
+            var btn = document.createElement('button');
+            btn.innerText = song.artist + ' - ' + song.name;
+            btn.onclick = function () {
+              hz[t] = song[t];
+              gna(song);
+              // 移除同平台其他按钮的选中状态
+              document.querySelectorAll("." + t + "-result button").forEach(function (b) {
+                b.classList.remove('select');
+              })
+              this.classList.add('select');
+            }
+            document.querySelector("." + t + "-result").append(btn);
+          })
+        }, {
+          type: t
+        })
+      }
+    }
+
+    // 同步歌曲名称和歌手
+    function gna(song) {
+      if (!names) {
+        names = song.name;
+      }
+      if (names != song.name) {
+        if (confirm('当前选取的歌曲名称有出入，是否覆盖名称？')) {
+          names = song.name;
+        }
+      }
+      if (!artists) {
+        artists = song.artist;
+      }
+      if (artists != song.artist) {
+        if (confirm('当前选取的歌曲歌手有出入，是否覆盖歌手？')) {
+          artists = song.artist;
+        }
+      }
+    }
+
+    // 生成JSON功能（补全所有字段）
+    function build() {
+      // 基础验证
+      if (!names || !artists) {
+        return alert('请先选择至少一首歌曲！');
+      }
+
+      // 获取自定义配置项
+      const mid = document.querySelector('#mid').value.trim() || '00---';
+      const score = parseInt(document.querySelector('#score').value.trim()) || 80;
+      const info = document.querySelector('#info').value.trim() || '-';
+      // 处理tags：分割为数组，去空，去重
+      const tagsInput = document.querySelector('#tags').value.trim();
+      const tags = tagsInput ? Array.from(new Set(tagsInput.split(',').map(tag => tag.trim()).filter(tag => tag))) : [];
+
+      // 验证score范围
+      const finalScore = Math.max(0, Math.min(100, score));
+
+      // 构建最终对象
+      var o = {};
+      o.name = names;
+      o.artist = artists;
+      o.getter = {};
+      for (var k in hz) {
+        o.getter[k] = hz[k];
+      }
+      o.tags = tags;       // 自定义标签数组
+      o.info = info;       // 自定义信息
+      o.score = finalScore;// 自定义评分（0-100）
+
+      // 生成带mid的JSON字符串
+      const resultJson = `"${mid}":` + JSON.stringify(o, null, 4);
+      document.querySelector("pre").innerText = resultJson;
+    }
+
+    // 重置所有状态和输入
+    function reset() {
+      // 清空结果区域
+      document.querySelector(".gequbao-result").innerHTML = '';
+      document.querySelector(".qq-result").innerHTML = '';
+      document.querySelector(".netease-result").innerHTML = '';
+      document.querySelector("pre").innerHTML = '';
+      
+      // 重置变量
+      hz = {};
+      names = null;
+      artists = null;
+
+      // 保留配置项默认值，如需重置可取消以下注释
+      // document.querySelector('#mid').value = '00---';
+      // document.querySelector('#score').value = '80';
+      // document.querySelector('#tags').value = '';
+      // document.querySelector('#info').value = '-';
+    }
+  </script>
+</body>
+</html>

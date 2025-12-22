@@ -1,0 +1,823 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap);
+
+*{
+    margin: 0;
+    padding: 0;
+    transition: all .3s linear;
+}
+
+html{
+    overflow: hidden;
+}
+body{
+    position: relative;
+    width: 100%;
+    height:100vh;
+    font-family: 'Noto Sans SC','Noto Sans JP', sans-serif;
+    overflow: hidden;
+    color: #000;
+    user-select: none;
+    font-size: 2.5vh;
+}
+
+body.dark{
+    background-color: #333;
+    color: #fff;
+    color-scheme: dark;
+}
+
+.page{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+    transition: opacity .2s;
+    background-color: #fff;
+}
+
+body.dark .page{
+    background-color: #333;
+}
+
+.page.ready{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+    z-index: 99;
+}
+.page.ready h1{
+    font-size: 40px;
+}
+
+.page.ready .state{
+    height: 40px;
+    line-height: 40px;
+    margin: 20px 0;
+}
+.page.ready .state.loading{
+    animation: blink 1.5s infinite linear;
+}
+.page.ready .state.error{
+    color:red;
+}
+
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.page.group-p .title{
+    width: 100%;
+    height: 7vh;
+    margin-top: 3vh;
+    line-height: 7vh;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+.group-show{
+    width: 100%;
+    position: relative;
+    height: 80%;
+}
+
+.group-show .cj{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.group-show .cj .m-icon svg{
+    height: 7vh;
+}
+
+.group-show .cj.lst{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right,#fff , transparent);
+}
+
+.group-show .cj.nxt{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: linear-gradient(to left,#fff , transparent);
+
+}
+
+body.dark .group-show .cj.lst{
+    background-image: linear-gradient(to right,#333 , transparent);
+}
+
+body.dark .group-show .cj.nxt{
+    background-image: linear-gradient(to left,#333 , transparent);
+}
+
+.groups{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.group{
+    width: calc(80vh * 0.6);
+    height: calc(80vh * 0.6);
+    margin:calc(80vh * 0.05) ;
+    margin-top: calc(80vh * 0.2);
+    border-radius: 5%;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    
+}
+
+.group img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.group .info{
+    width: 90%;
+    height: 15%;
+    line-height: calc(80vh * 0.09);
+    background-color: rgba(255,255,255,.7);
+    backdrop-filter: blur(20px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 5%;
+}
+
+body.dark .group .info{
+    background-color: rgba(0,0,0,.7);
+}
+
+.group .info .name{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.group.selected{
+    width: calc(80vh * 0.8);
+    height: calc(80vh * 0.8);
+    margin-top: calc(80vh * 0.1);
+}
+.group.selected .info{
+    line-height: calc(80vh * 0.12);
+    height: 24%;
+}
+
+.group.selected .info .desc{
+    line-height: 1.3em;
+}
+
+.page.list-p .left{
+    width: 36%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.page.list-p .left img{
+    width: 40vh;
+    aspect-ratio: 1/1;
+    border-radius: 10%;
+    margin: 5vh 0;
+    display: block;
+    box-shadow: #888 0 2px 10px;
+}
+
+.page.list-p .left .name{
+    color: #000;
+    font-weight: bold;
+    line-height: 1.5em;
+    font-size: 1.5em;
+    padding-bottom: 1vh;
+}
+
+body.dark .page.list-p .left .name{
+    color: #fff;
+}
+
+.page.list-p .right{
+    width: 64%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.page.list-p .right .topper{
+    width: 100%;
+    height: 7vh;
+    box-shadow: #aaa 0 1px 5px;
+}
+
+body.dark .page.list-p .right .topper{
+    box-shadow: #666 0 1px 5px;
+}
+.page.list-p .right .topper>*{
+    float: left;
+    height: 100%;
+    padding: 0 .5em;
+    line-height: 7vh;
+}
+
+.page.list-p .right .topper>*:hover{
+    background-color: #f4f4f4;
+}
+
+body.dark .page.list-p .right .topper>*:hover{
+    background-color: #444;
+}
+
+.page.list-p .right .list{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 93vh;
+}
+
+.page.list-p .right .list .item{
+    width: calc(100% - 1em);
+    height: 7vh;
+    overflow: hidden;
+    padding: 0 .5em;
+    position: relative;
+}
+
+.page.list-p .right .list .item .songname{
+    line-height: 7vh;
+    font-size: .9em;
+}
+
+.page.list-p .right .list .item .songartist{
+    opacity: 0;
+    font-size: .6em;
+    line-height: 3vh;
+}
+
+.page.list-p .right .list .item:hover{
+    background-color: #f4f4f4;
+}
+
+body.dark .page.list-p .right .list .item:hover{
+    background-color: #444;
+}
+
+.page.list-p .right .list .item:hover .songname{
+    line-height: 4vh;
+}
+
+.page.list-p .right .list .item:hover .songartist{
+    opacity: .7;
+}
+
+
+.page.list-p .right .list .item .playing-svg{
+    display: none;
+    width: 4vh;
+    height: 7vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.page.list-p .right .list .item .playing-svg svg{
+    width: 2vh;
+    height: 2vh;
+}
+
+.page.list-p .right .list .item.playing{
+    padding-left: 5vh;
+    width: calc((100% - .5em) - 5vh);
+    color: #09f;
+}
+
+.page.list-p .right .list .item.playing .playing-svg{
+    display: flex;
+}
+
+.back-icon{
+    width: 7vh;
+    height: 7vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-icon:hover{
+    background-color: #f4f4f4;
+}
+
+body.dark .back-icon:hover{
+    background-color: #444;
+}
+
+.back-icon svg{
+    width: 60%;
+    height: 60%;
+}
+
+.musicplayer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    z-index: 999;
+    /* display: none; */
+    --textcolor:#000;
+    --bgcolor:#fff;
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+    overflow: hidden;
+}
+
+.musicplayer.show{
+    top: 0;
+}
+
+.musicplayer.dark{
+    --textcolor:#fff;
+    --bgcolor:#333;
+}
+
+.musicplayer .btn{
+    width: 5vh;
+    height: 5vh;
+    opacity: .3;
+    cursor: pointer;
+    margin: .5vh;
+}
+
+.musicplayer .btn:hover{
+    opacity: 1;
+}
+
+.musicplayer .btn svg{
+    width: 50%;
+    height: 50%;
+}
+
+.musicplayer .topper{
+    width: 100%;
+    height: 6vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.musicplayer .topper>*{
+    float: left;
+}
+
+.musicplayer .taber{
+    width: calc(100% - 6vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.2;
+}
+
+.musicplayer .taber:hover{
+    opacity: 1;
+}
+
+.musicplayer .taber .tab{
+    line-height: 6vh;
+    padding: 0 1em;
+    font-size: 0.7em;
+    color: var(--textcolor);
+    cursor: pointer;
+    opacity: .5;
+}
+
+.musicplayer .taber .tab:hover{
+    opacity: .7;
+}
+
+.musicplayer .taber .tab.active{
+    opacity: 1;
+}
+
+.btnsvg{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8em;
+}
+
+.btnsvg.hide{
+    display: none;
+}
+
+.btn.active{
+    opacity: 1;
+}
+
+.musicplayer .btns{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 90;
+    opacity: .5;
+}
+
+.musicplayer .btns:hover{
+    opacity: 1;
+}
+
+.musicplayer .controls{
+    width: 40%;
+    height: calc(100% - 6vh);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.musicplayer .controls .cover{
+    width: 34vh;
+    height: 34vh;
+    margin: 3vh;
+    border-radius: 50%;
+    box-shadow: #ccc 0 1px 3vh;
+    position: relative;
+    animation: rotate 24s linear infinite;
+    animation-play-state: paused;
+}
+.musicplayer.playing .controls .cover{
+    animation-play-state: running;
+    width: 40vh;
+    height: 40vh;
+    margin: 0;
+}
+.musicplayer.dark .controls .cover{
+    box-shadow: #666 0 1px 3vh;
+}
+
+.musicplayer .controls .cover .noimg{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.musicplayer .controls .cover .noimg svg{
+    width: 20%;
+    color: var(--textcolor);
+    opacity: .7;
+}
+
+.musicplayer .controls .cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    display: block;
+    border-radius: 50%;
+}
+
+.musicplayer .controls .songname{
+    padding-top: 4vh;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.musicplayer .controls .songartist{
+    opacity: .6;
+}
+
+.musicplayer .controls .music-con{
+    width: 100%;
+    padding-top: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.musicplayer .controls .con{
+    width: 30vh;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.musicplayer .controls .con .btn{
+    height: 7vh;
+    width: 7vh;
+    opacity: .6;
+}
+
+.musicplayer .controls .con .btn:hover{
+    opacity: 1;
+}
+
+.musicplayer .controls .con .btn:active svg{
+    transform: scale(.8);
+}
+.musicplayer .controls .con .btn.play{
+    height: 10vh;
+    width: 10vh;
+    opacity: .8;
+}
+
+.musicplayer .controls .range{
+    width: 80%;
+    height: .5vh;
+    background-color: #eee;
+    border-radius: 1vh;
+    position: relative;
+    margin: .5vh 0;
+}
+
+.musicplayer.dark .controls .range{
+    background-color: #555;
+}
+
+.musicplayer .controls .range .r1{
+    width: 10%;
+    height: 100%;
+    border-radius: 1vh;
+    background-color: var(--textcolor);
+    opacity: .6;
+    transition: none;
+}
+
+.musicplayer .controls .range .r2{
+    transition: none;
+    width: 1.5vh;
+    height: 1.5vh;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    transform: translate(-0.5vh,-0.5vh);
+    background-color: var(--textcolor);
+    opacity: .8;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.musicplayer .controls .time{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    color: var(--textcolor);
+    opacity: .5;
+}
+
+.musicplayer .lrcs,
+.musicplayer .infos
+{
+    width: 60%;
+    height: calc(100% - 6vh);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.musicplayer .lrcs .lrclist{
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+.musicplayer .lrcs .lrclist .item{
+    opacity: .5;
+    padding: 1.5em 0;
+    width: 100%;
+    text-align: center;
+}
+.musicplayer .lrcs .lrclist .item .yrc{
+    width: 100%;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    min-height: 1.5em;
+}
+.musicplayer .lrcs .lrclist .item .trc{
+    opacity: .75;
+    min-height: .75em;
+    font-size: 1em;
+    display: none;
+}
+.musicplayer .lrcs .lrclist.trans .item .trc{
+    display: block;
+}
+
+
+.musicplayer .lrcs .lrclist .item.now{
+    opacity: 1;
+    padding: .5em 0;
+}
+.musicplayer .lrcs .lrclist .item.now .yrc{
+    font-size: 2.4em;
+    line-height: 2em;
+}
+
+.musicplayer .infos{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 12vh);
+    bottom: 6vh;
+    display: none;
+}
+
+.musicplayer.showinfo .infos{
+    display: flex;
+}
+
+.musicplayer .infos .tbl{
+    width: 80%;
+    padding: .3em 0;
+}
+
+.musicplayer .infos .tbl .key{
+    font-weight: bold;
+    float: left;
+}
+.musicplayer .infos .tbl .value{
+    float: left;
+}
+.musicplayer .infos .tag{
+    display: inline-block;
+    padding: 0 .5em;
+    margin: 0 .2em;
+    background-color: #eee;
+    border-radius: 1vh;
+}
+.musicplayer.dark .infos .tag{
+    background-color: #666;
+}
+
+.playing-anim{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+}
+.musicplayer.playing .playing-anim{
+    display: block;
+}
+
+.playing-anim>*{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    border: #888 solid 2px;
+    border-radius: 50%;
+    animation: playing 1.5s infinite linear;
+  }
+  .playing-anim>*:nth-child(2){
+    animation-delay: -.6s;
+  }
+  .playing-anim>*:nth-child(3){
+    animation-delay: -.1.2s;
+  }
+  @keyframes playing {
+    0%{
+      width: 100%;
+      height: 100%;
+      opacity: .5;
+      margin: 0;
+    }100%{
+      width: 150%;
+      height: 150%;
+      opacity: 0;
+      margin: -25%;
+    }
+  }
+  @keyframes rotate {
+    0%{
+      transform: rotate(0deg);
+    }100%{
+      transform: rotate(360deg);
+    }
+  }
+
+.floatb{
+    width: 30vh;
+    height: 7vh;
+    border-radius: 7vh;
+    box-shadow: #aaa 0 0 1vh;
+    position: absolute;
+    bottom: 4vh;
+    left: calc(50% - 15vh);
+    background-color: #fff;
+}
+
+body.dark .floatb{
+    background-color: #000;
+    box-shadow: #666 0 0 1vh;
+
+}
+
+.musicplayer.show~.floatb{
+    bottom: -10vh;
+}
+
+
+.floatb .cover{
+    width: 5vh;
+    height: 5vh;
+    margin: 1vh;
+    float: left;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: #aaa 0 0 .5vh;
+    animation: rotate 24s linear infinite;
+    animation-play-state: paused;
+}
+.floatb .cover.playing{
+    animation-play-state: running;
+    width: 6vh;
+    height: 6vh;
+    margin: .5vh;
+}
+.floatb .cover .noimg,
+.floatb .cover img
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.floatb .cover .noimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floatb .cover .noimg svg{
+    height: 3vh;
+}
+.floatb img{
+    opacity: 0;
+}
+.floatb .d{
+    width: calc(100% - 7vh);
+    height: inherit;
+    float: left;
+}
+
+.floatb .d .name{
+    font-size: .8em;
+    padding: .3vh 0;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.floatb .d .artist{
+    font-size: .5em;
+    opacity: .6;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}

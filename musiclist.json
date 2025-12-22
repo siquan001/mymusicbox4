@@ -1,0 +1,996 @@
+{
+    "group":{
+        "所有音乐":{
+            "sp":"all",
+            "desc":"音乐盒子里的所有音乐",
+            "img":"https://p2.music.126.net/hVpp2RXEtvsgvevE5b3tcA==/109951165409657142.jpg"
+        },
+        "S":{
+            "tag":["S"],
+            "desc":"我最喜欢的音乐集合喵~",
+            "img":"https://p1.music.126.net/y2JhDXDFqMKT31PVTopGUQ==/109951164496647934.jpg"
+        },
+        "A":{
+            "tag":["A"],
+            "desc":"虽然不是最喜欢的，但也很好听呢",
+            "img":"https://p2.music.126.net/aeceq9f8r8q62ivqlss1qQ==/109951164921864433.jpg"
+        },
+        "纯音乐":{
+            "tag":["纯音乐"],
+            "desc":"纯音乐集合（排除音游曲）",
+            "img":"https://p2.music.126.net/wuBe3K5odyEqZBLZNkXNlg==/109951163855629724.jpg"
+        },
+        "音游":{
+            "tag":["Phigros","Rizline","旋转音律","Arcaea","Cytus","MAIMAI","音游"],
+            "desc":"我大抵是没救了，但音游确实极大地拓宽了我的视野",
+            "img":"http://p2.music.126.net/aSi0wx1oE0IqLhqD0OsgeQ==/109951170210194991.jpg"
+        }
+    },
+    "musics":{
+        "00001":{
+            "name": "心の記憶(feat.Miku)",
+            "artist": "A-39,初音ミク,沙包P",
+            "getter": {
+                "qq": {
+                    "mid": "002xZW5m0pcFkS"
+                },
+                "netease": {
+                    "id": 1847928316
+                },
+                "gequbao": {
+                    "id": "24746993"
+                }
+            },
+            "tags": [
+                "S",
+                "日文",
+                "Phigros"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00002":{
+            "name": "フィクションブルー",
+            "artist": "Ayase,初音ミク",
+            "getter": {
+                "qq": {
+                    "mid": "004MtC8R3UN4hb"
+                },
+                "netease": {
+                    "id": 1453114196
+                },
+                "gequbao": {
+                    "id": "182715"
+                }
+            },
+            "tags": [
+                "S",
+                "日文",
+                "特别喜欢"
+            ],
+            "info": "这首歌是在玩phira时听到的。尽管日语听不懂，但歌曲中清晰的旋律和节奏和初音的略带机械感的声音，仍有条不紊地将这首歌中淡淡的忧伤传达出来。目前可以说是我最喜欢的日文歌之一。",
+            "score": 100
+        },
+        "00003":{
+            "name": "くうになる (放空) (feat. 可不)",
+            "artist": "MIMI/可不",
+            "getter": {
+                "qq": {
+                    "mid": "001qcyvW4bJEJF"
+                },
+                "netease": {
+                    "id": 1912598037
+                },
+                "gequbao": {
+                    "id": "210616"
+                }
+            },
+            "tags": [
+                "S",
+                "日文"
+            ],
+            "info": "MIMI的歌总是善于用活泼、可爱的旋律来讲述面向内心的情感（正符合我的需要）",
+            "score": 95
+        },
+        "00004":{
+            "name": "Dawnbreath（α）",
+            "artist": "Aginomoto/Warma",
+            "getter": {
+                "qq": {
+                    "mid": "001FT2io247oyf"
+                },
+                "netease": {
+                    "id": 479480785
+                },
+                "gequbao": {
+                    "id": "44422061"
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "Warma"
+            ],
+            "info": "Dawnbreath（α）相比于Dawnbreath（β）多了许多Warma的人声采样，让整个曲子变得别样的活泼了起来",
+            "score": 90
+        },
+        "00005":{
+            "name": "Dawnbreath（β）",
+            "artist": "Aginomoto/Warma",
+            "getter": {
+                "qq": {
+                    "mid": "004ZQhN33KbOuy"
+                },
+                "netease": {
+                    "id": 479483121
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "Warma",
+                "特别喜欢"
+            ],
+            "info": "由缓调入曲，后节奏逐渐加紧，正如黎明时万物逐渐复苏的感觉，是一个相当活泼，有生命力的曲子",
+            "score": 95
+        },
+        "00006":{
+            "name": "ららら",
+            "artist": "ナナツカゼ",
+            "getter": {
+                "qq": {
+                    "mid": "004KekiC2nAupW"
+                },
+                "netease": {
+                    "id": 2686605364
+                },
+                "gequbao": {
+                    "id": "27207778"
+                }
+            },
+            "tags": [
+                "S",
+                "日文"
+            ],
+            "info": "这首歌算是PIKASONIC给我的一个小惊喜",
+            "score": 85
+        },
+        "00007":{
+            "name": "Lockdown (Tatsunoshin VIP)",
+            "artist": "Tatsunoshin,PIKASONIC,Tsugumi Nagahara",
+            "getter": {
+                "qq": {
+                    "mid": "000vH26a2oaS3j"
+                },
+                "netease": {
+                    "id": 1937255781
+                },
+                "gequbao": {
+                    "id": "25170658"
+                }
+            },
+            "tags": [
+                "S",
+                "日文"
+            ],
+            "info": "这个remix版本的歌手表现力相当强，特别是中间的情感爆发段，相当有感觉",
+            "score": 85
+        },
+        "00008":{
+            "name": "[in the petals of snow.]",
+            "artist": "Shiroi-Ice/lunari.io",
+            "getter": {
+                "qq": {
+                    "mid": "000ZL0Sr2rvszU"
+                },
+                "netease": {
+                    "id": 2016433764
+                },
+                "gequbao": {
+                    "id": "5716192"
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "特别喜欢"
+            ],
+            "info": "舒缓中带着紧凑，绝望中抒发希望，在这由金属构成的一片片雪花中...",
+            "score": 100
+        },
+        "00009":{
+            "name": "Inverted World",
+            "artist": "ARForest",
+            "getter": {
+                "qq": {
+                    "mid": "003SqjwZ2Uoffz"
+                },
+                "netease": {
+                    "id": 2099631232
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "旋转音律"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00010":{
+            "name": "PRAGMATISM -RESURRECTION-",
+            "artist": "Laur",
+            "getter": {
+                "qq": {
+                    "mid": "00075TRG3U863P"
+                },
+                "netease": {
+                    "id": 1907125216
+                },
+                "gequbao": {
+                    "id": "89025"
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "Arcaea"
+            ],
+            "info": "Arcaea个人排名第一",
+            "score": 95
+        },
+        "00011":{
+            "name": "enchanted love (BOFXVI 2020)",
+            "artist": "linear ring",
+            "getter": {
+                "qq": {
+                    "mid": "003vQSc4121Jwu"
+                },
+                "netease": {
+                    "id": 1846786260
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "特别喜欢",
+                "音游"
+            ],
+            "info": "完美演绎了love的跌宕起伏",
+            "score": 100
+        },
+        "00012":{
+            "name": "Secret Illumination",
+            "artist": "Yooh",
+            "getter": {
+                "netease": {
+                    "id": 2014795357
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "特别喜欢",
+                "旋转音律"
+            ],
+            "info": "正如在旷远的荒漠中自由闯荡的快感",
+            "score": 95
+        },
+        "00013":{
+            "name": "Luminescence",
+            "artist": "卉HUI-Works/米虾Fomiki/初云CLoudie",
+            "getter": {
+                "qq": {
+                    "mid": "0020zwxZ3wrXEK"
+                },
+                "netease": {
+                    "id": 1944086441
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "Phigros"
+            ],
+            "info": "Phigros第八章最爱的歌曲，虽然名字是冷光，但结合Phigros的背景，它更像是一种微妙的希望，或转瞬即逝",
+            "score": 90
+        },
+        "00014":{
+            "name": "Dragonflame",
+            "artist": "Kirara Magic",
+            "getter": {
+                "qq": {
+                    "mid": "004WZe3310ezJD"
+                },
+                "netease": {
+                    "id": 2009411428
+                },
+                "gequbao": {
+                    "id": "160226"
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00015":{
+            "name": "无梦之梦",
+            "artist": "Warma",
+            "getter": {
+                "qq": {
+                    "mid": "004K62GY4SyZEw"
+                },
+                "netease": {
+                    "id": 1346433524
+                },
+                "gequbao": {
+                    "id": "1159822"
+                }
+            },
+            "tags": [
+                "S",
+                "Warma",
+                "日文"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00016":{
+            "name": "ドーピングダンス (feat. 初音ミク)",
+            "artist": "STEAKA,初音ミク",
+            "getter": {
+                "qq": {
+                    "mid": "002jfC5Y3hnRIH"
+                },
+                "netease": {
+                    "id": 1968735700
+                },
+                "gequbao": {
+                    "id": "172006"
+                }
+            },
+            "tags": [
+                "S",
+                "日文"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00017":{
+            "name": "焦糖星",
+            "artist": "Warma",
+            "getter": {
+                "qq": {
+                    "mid": "004aZGto0DCVo2"
+                },
+                "netease": {
+                    "id": 1373906533
+                },
+                "gequbao": {
+                    "id": "2938099"
+                }
+            },
+            "tags": [
+                "S",
+                "Warma",
+                "特别喜欢"
+            ],
+            "info": "-",
+            "score": 95
+        },
+        "00018":{
+            "name": "别让我担心",
+            "artist": "多多poi",
+            "getter": {
+                "qq": {
+                    "mid": "002qg9Pr10SssT"
+                },
+                "netease": {
+                    "id": 2086092043
+                },
+                "gequbao": {
+                    "id": "19533"
+                }
+            },
+            "tags": [
+                "S",
+                "特别喜欢"
+            ],
+            "info": "虽然我不玩原神，但并不妨碍这首歌成为我最喜欢的歌之一。这首歌最开始是在phira上发现的，其所表达的既是友情又超越友情的深深地吸引到了我。多多poi的声音更是将这首歌的情感表达到了极致。",
+            "score": 100
+        },
+        "00019":{
+            "name": "Distorted Fate",
+            "artist": "削除",
+            "getter": {
+                "qq": {
+                    "mid": "000jmnTQ2Y8FPZ"
+                },
+                "netease": {
+                    "id": 2080461744
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "Phigros"
+            ],
+            "info": "削除的一贯风格",
+            "score": 90
+        },
+        "00020":{
+            "name": "Altale",
+            "artist": "削除",
+            "getter": {
+                "qq": {
+                    "mid": "000GmbGL1wFAgs"
+                },
+                "netease": {
+                    "id": 30148635
+                },
+                "gequbao": {
+                    "id": "1144839"
+                }
+            },
+            "tags": [
+                "S",
+                "音游",
+                "纯音乐",
+                "特别喜欢"
+            ],
+            "info": "削除竟然会写温和的曲子！",
+            "score": 100
+        },
+        "00021":{
+            "name": "S.A.T.E.L.L.I.T.E.",
+            "artist": "かめりあ",
+            "getter": {
+                "qq": {
+                    "mid": "001YROGM1j6Eep"
+                },
+                "netease": {
+                    "id": 1336689103
+                }
+            },
+            "tags": [
+                "S",
+                "Phigros",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00022":{
+            "name": "crystallized",
+            "artist": "かめりあ",
+            "getter": {
+                "netease": {
+                    "id": 41631041
+                },
+                "gequbao": {
+                    "id": "1672212"
+                }
+            },
+            "tags": [
+                "S",
+                "律动轨迹",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00023":{
+            "name": "沃玛审判曲（VIP Future Bass Mix）",
+            "artist": "Flowesans",
+            "getter": {
+                "netease": {
+                    "id": 1934862612
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00024":{
+            "name": "Warmtale",
+            "artist": "Flowesans",
+            "getter": {
+                "netease": {
+                    "id": 2122634266
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00025":{
+            "name": "優等生 (feat. 初音ミク)",
+            "artist": "Shino,初音ミク",
+            "getter": {
+                "qq": {
+                    "mid": "004IGFNR0ImXeX"
+                },
+                "netease": {
+                    "id": 1960102245
+                },
+                "gequbao": {
+                    "id": "630926"
+                }
+            },
+            "tags": [
+                "S",
+                "日文"
+            ],
+            "info": "普通群体渴望变优秀，渴望被爱，但又无法实现的矛盾感",
+            "score": 90
+        },
+        "00026":{
+            "name": "バケモノの唄",
+            "artist": "Shino,初音ミク",
+            "getter": {
+                "qq": {
+                    "mid": "000XtT9d0yah4T"
+                },
+                "netease": {
+                    "id": 1440693335
+                },
+                "gequbao": {
+                    "id": "67701"
+                }
+            },
+            "tags": [
+                "S",
+                "日文"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00027":{
+            "name": "ふわり (轻轻地) (feat. MIMI,可不,初音ミク)",
+            "artist": "Loveit Core/MIMI/可不/初音未来",
+            "getter": {
+                "qq": {
+                    "mid": "0042FZ3N3xbKQP"
+                },
+                "netease": {
+                    "id": 2034848078
+                },
+                "gequbao": {
+                    "id": "623167"
+                }
+            },
+            "tags": [
+                "S",
+                "日文"
+            ],
+            "info": "喜欢这样轻轻的感觉",
+            "score": 90
+        },
+        "00028":{
+            "name": "FLUFFY FLASH",
+            "artist": "Kobaryo",
+            "getter": {
+                "qq": {
+                    "mid": "004QSbeT4SzrMq"
+                },
+                "netease": {
+                    "id": 2134536002
+                },
+                "gequbao": {
+                    "id": "1989896"
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "音游"
+            ],
+            "info": "爽！",
+            "score": 90
+        },
+        "00029":{
+            "name": "4:04 AM (30 MINUTES VERSION)",
+            "artist": "439*hz",
+            "getter": {
+                "qq": {
+                    "mid": "002KRP3e1rN5VG"
+                },
+                "netease": {
+                    "id": 2724075509
+                },
+                "gequbao": {
+                    "id": "36874583"
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐",
+                "LONG"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00030":{
+            "name": "リ:セット改 (feat. 初音ミク)",
+            "artist": "439*hz,初音ミク",
+            "getter": {
+                "netease": {
+                    "id": 2755390366
+                }
+            },
+            "tags": [
+                "S",
+                "日文",
+                "特别喜欢"
+            ],
+            "info": "真的好喜欢这样空灵又可爱的初音nia",
+            "score": 95
+        },
+        "00031":{
+            "name": "RE:SET (feat. 初音ミク)",
+            "artist": "439*hz,初音ミク",
+            "getter": {
+                "qq": {
+                    "mid": "000i8VFd29gU3x"
+                },
+                "netease": {
+                    "id": 2734452022
+                }
+            },
+            "tags": [
+                "S",
+                "日文"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00032":{
+            "name": "The Whole Rest",
+            "artist": "KIVΛ",
+            "getter": {
+                "qq": {
+                    "mid": "001si3hB3JA7DH"
+                },
+                "netease": {
+                    "id": 1917016622
+                },
+                "gequbao": {
+                    "id": "3057352"
+                }
+            },
+            "tags": [
+                "S",
+                "CytusII",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00033":{
+            "name": "Innocent white",
+            "artist": "影虎。",
+            "getter": {
+                "qq": {
+                    "mid": "003pvp7E2Za6oz"
+                },
+                "netease": {
+                    "id": 2139042161
+                },
+                "gequbao": {
+                    "id": "6945185"
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "Milthm"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00035":{
+            "name": "烁雨",
+            "artist": "ILusMin",
+            "getter": {
+                "qq": {
+                    "mid": "0036WsdS0hr5Wk"
+                },
+                "netease": {
+                    "id": 2618516962
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "Milthm"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00036":{
+            "name": "Defection",
+            "artist": "TeddyLoid/DELTA",
+            "getter": {
+                "qq": {
+                    "mid": "000su6i34SXA0o"
+                },
+                "netease": {
+                    "id": 1971127006
+                },
+                "gequbao": {
+                    "id": "1350817"
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "Arcaea"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00037":{
+            "name": "今年も「雪降り、メリクリ」目指して頑張ります！！",
+            "artist": "Daily天利,AiSS,A-39,沙包P,NE1516Hz",
+            "getter": {
+                "netease": {
+                    "id": 2034894619
+                }
+            },
+            "tags": [
+                "S",
+                "日文",
+                "Phigros"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00038":{
+            "name": "Vs.忆雨-矛盾的憎恨",
+            "artist": "FloweSans",
+            "getter": {
+                "qq": {
+                    "mid": "000bawLH146Axy"
+                },
+                "netease": {
+                    "id": 1499604839
+                },
+                "gequbao": {
+                    "id": "3502459"
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00039":{
+            "name": "Antler",
+            "artist": "Juggernaut./Yuichiro Yazki",
+            "getter": {
+                "qq": {
+                    "mid": "000DR8i22AnXQI"
+                },
+                "netease": {
+                    "id": 1944651767
+                },
+                "gequbao": {
+                    "id": "1118849"
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00040":{
+            "name": "yakusoku",
+            "artist": "Minecraft,谷岡久美",
+            "getter": {
+                "qq": {
+                    "mid": "002jtbbR2EBnma"
+                },
+                "netease": {
+                    "id": 2145324211
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "MC",
+                "特别喜欢"
+            ],
+            "info": "-",
+            "score": 95
+        },
+        "00041":{
+            "name": "罰",
+            "artist": "削除",
+            "getter": {
+                "qq": {
+                    "mid": "003AJDrL24PG3D"
+                },
+                "netease": {
+                    "id": 2055244252
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "音游"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00042":{
+            "name": "Pale",
+            "artist": "MIMI,初音ミク",
+            "getter": {
+                "qq": {
+                    "mid": "0028q2T044dBrJ"
+                },
+                "netease": {
+                    "id": 1824921181
+                },
+                "gequbao": {
+                    "id": "323655"
+                }
+            },
+            "tags": [
+                "S",
+                "日文"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00043":{
+            "name": "来自天空的呼唤",
+            "artist": "Warma",
+            "getter": {
+                "qq": {
+                    "mid": "0036snXd2rmVAE"
+                },
+                "netease": {
+                    "id": 2067100070
+                },
+                "gequbao": {
+                    "id": "1108879"
+                }
+            },
+            "tags": [
+                "S",
+                "特别喜欢",
+                "Warma"
+            ],
+            "info": "友谊便是这个世界最好的相遇~",
+            "score": 95
+        },
+        "00044":{
+            "name": "喃喃萤火",
+            "artist": "warma",
+            "getter": {
+                "netease": {
+                    "id": 2612847880
+                }
+            },
+            "tags": [
+                "S",
+                "特别喜欢",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 95
+        },
+        "00045":{
+            "name": "泛泛人类不会祈祷 人声本家",
+            "artist": "warma",
+            "getter": {
+                "qq": {
+                    "mid": "003UBWuS10TBPr"
+                },
+                "netease": {
+                    "id": 2089729261
+                },
+                "gequbao": {
+                    "id": "1095052"
+                }
+            },
+            "tags": [
+                "S",
+                "特别喜欢",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 100
+        },
+        "00046":{
+            "name": "她追逐着月光的尽头",
+            "artist": "warma",
+            "getter": {
+                "qq": {
+                    "mid": "003GTQME200i2D"
+                },
+                "netease": {
+                    "id": 1868711061
+                },
+                "gequbao": {
+                    "id": "5724359"
+                }
+            },
+            "tags": [
+                "S",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00047":{
+            "name": "甜蜜魔法",
+            "artist": "Warma",
+            "getter": {
+                "qq": {
+                    "mid": "000XMYOm00Yv37"
+                },
+                "netease": {
+                    "id": 1399757048
+                }
+            },
+            "tags": [
+                "S",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00048":{
+            "name": "夏天幻游日记",
+            "artist": "Warma",
+            "getter": {
+                "qq": {
+                    "mid": "002aTpXP49B4FC"
+                },
+                "netease": {
+                    "id": 2160286275
+                },
+                "gequbao": {
+                    "id": "3580262"
+                }
+            },
+            "tags": [
+                "S",
+                "特别喜欢",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 100
+        },
+        "00049":{
+            "name": "Warma! Yeah!",
+            "artist": "warma",
+            "getter": {
+                "netease": {
+                    "id": 1299354166
+                }
+            },
+            "tags": [
+                "S",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 100
+        }
+    }
+}
