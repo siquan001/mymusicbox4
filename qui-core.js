@@ -8,7 +8,7 @@
     var sq={
         about:{
             name:"qui",
-            version:"1.0.0",
+            version:"1.1.0",
             author:"siquan",
             desc:"web开发辅助工具库"
         },

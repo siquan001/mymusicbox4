@@ -991,6 +991,60 @@
             ],
             "info": "-",
             "score": 100
+        },
+        "00050":{
+            "name": "あのね",
+            "artist": "ナナツカゼ",
+            "getter": {
+                "qq": {
+                    "mid": "003ZhBFM34J7h7"
+                },
+                "netease": {
+                    "id": 3327968863
+                }
+            },
+            "tags": [
+                "PIKA",
+                "日文"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00051":{
+            "name": "百鬼֎夜行(逢魔刻 Long ver.)",
+            "artist": "Salad Savior",
+            "getter": {
+                "qq": {
+                    "mid": "004bZr8L0EwaPs"
+                },
+                "netease": {
+                    "id": 3316197800
+                }
+            },
+            "tags": [
+                "音游",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00052":{
+            "name": "モニタリング",
+            "artist": "DECO*27,初音ミク",
+            "getter": {
+                "gequbao": {
+                    "id": "18562033"
+                },
+                "netease": {
+                    "id": 2639291583
+                }
+            },
+            "tags": [
+                "miku",
+                "日文"
+            ],
+            "info": "-",
+            "score": 80
         }
     }
 }
