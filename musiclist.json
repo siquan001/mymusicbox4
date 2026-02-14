@@ -1045,6 +1045,118 @@
             ],
             "info": "-",
             "score": 80
+        },
+        "00053":{
+            "name": "いつか忘れるんだろう",
+            "artist": "TsukiP",
+            "getter": {
+                "qq": {
+                    "mid": "003ghqBD371C5v"
+                },
+                "netease": {
+                    "id": 2103309215
+                }
+            },
+            "tags": [
+                "S",
+                "日文",
+                "特别喜欢"
+            ],
+            "info": "-",
+            "score": 100
+        },
+        "00054":{
+            "name": "NewDay (2022哔哩哔哩bilibili拜年纪)",
+            "artist": "幽舞越山、hanser",
+            "getter": {
+                "qq": {
+                    "mid": "001vq0V62VLgIX"
+                }
+            },
+            "tags": [
+                "A"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00055":{
+            "name": "新春小记 (2022哔哩哔哩bilibili拜年纪)",
+            "artist": "阿梓从小就很可爱/早稻叽/绯赤艾莉欧",
+            "getter": {
+                "qq": {
+                    "mid": "003MKHmn4FF2PV"
+                }
+            },
+            "tags": [
+                "A"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00056":{
+            "name": "靈",
+            "artist": "MYTK",
+            "getter": {
+                "qq": {
+                    "mid": "001yYNcb4ZLw37"
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "Milthm"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00057":{
+            "name": "Regnaissance",
+            "artist": "AiSS",
+            "getter": {
+                "netease": {
+                    "id": 2619859085
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "Milthm"
+            ],
+            "info": "-",
+            "score": 95
+        },
+        "00058":{
+            "name": "D/N/A",
+            "artist": "25時、ナイトコードで。/镜音铃",
+            "getter": {
+                "qq": {
+                    "mid": "003Efqk73SmtPo"
+                },
+                "netease": {
+                    "id": 2697990902
+                }
+            },
+            "tags": [
+                "A",
+                "日文"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00059":{
+            "name": "天灵灵地灵灵 feat.小可学妹",
+            "artist": "iKz",
+            "getter": {
+                "qq": {
+                    "mid": "004eTqdh4JnFq0"
+                }
+            },
+            "tags": [
+                "S",
+                "喵斯快跑"
+            ],
+            "info": "-",
+            "score": 95
         }
     }
 }
