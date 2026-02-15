@@ -494,6 +494,7 @@ const MP={
         let imgEl = document.createElement('img');
         imgEl.src = img;
         imgEl.crossOrigin = 'Anonymous';
+        imgEl.referrerPolicy = 'no-referrer';
         imgEl.onload = function () {
             try {
                 let canvas = document.createElement('canvas'),
@@ -529,6 +530,7 @@ const MP={
                 // }
                 cb(m1,m2,m3,m);
             } catch (e) {
+                console.warn(e);
                 d();
             }
         }
@@ -537,12 +539,12 @@ const MP={
         }
         function d() {
             if(img.indexOf('http')==-1)return cb('rgba(0,0,0,0)', -1);
-            musicAll.ajax('https://uapis.cn/api/imgbase',{url: img}).then(function (n) {
+            musicAll.ajax('https://uapis.cn/api/v1/image/tobase64',{url: img}).then(function (n) {
                 if (!n) {
                     cb('rgba(0,0,0,0)', -1);
                 } else {
-                    var base64 = 'data:image/jpeg;base64,'+n.base64;
-                    colorfulImg(base64, cb);
+                    var base64 = n.base64;
+                    MP.colorfulImg(base64, cb);
                 }
             })
         }

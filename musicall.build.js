@@ -186,6 +186,7 @@ const musicAll={
             }
         }else if(type=='img'){
             let i=new Image();
+            i.referrerPolicy="no-referrer";
             i.src=url;
             i.onload=function(){
                 cb(true);
@@ -536,10 +537,42 @@ const musicAll={
     }
 })();
 
+// bilibili
+(()=>{
+    window.bilibiliAPI={
+        platform:"bilibili",
+        name:"siquan",
+        support:["img","music","details"],
+        requestFz:[["img","music","details"]],
+        get:async (dt)=>{
+            if(!dt.bvid){
+                musicAll.ctErr(0,dt,'bvid');
+            }
+            console.log("Request ",dt);
+            let api='https://api.mir6.com/api/bzjiexi';
+            let data={
+                url:'https://www.bilibili.com/video/'+dt.bvid+'/',
+                type:"json"
+            }
+            let result=await musicAll.ajax(api,data);
+            return {
+                music:result.data[0].video_url,
+                img:result.imgurl,
+                details:{
+                    artist:result.name,
+                    name:result.title
+                }
+            }
+        }
+    }
+})()
+
 musicAll.addEngine(gmyaQQEngine,1);
 musicAll.addEngine(gmyaNeteaseEngine,2);
 musicAll.addEngine(vkeysQQEngine,2);
 musicAll.addEngine(vkeysNeteaseEngine,1);
 musicAll.addEngine(neteDefEngine,3);
+musicAll.addEngine(bilibiliAPI,4);
 musicAll.addEngine(gequbaoEngine,1);
-musicAll.config().getSort.img=['netease'];
+musicAll.config().getSort.img=['netease','bilibili'];
+// musicAll.config().getSort.music=['bilibili'];

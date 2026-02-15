@@ -1071,6 +1071,9 @@
             "getter": {
                 "qq": {
                     "mid": "001vq0V62VLgIX"
+                },
+                "bilibili":{
+                    "bvid":"BV1ca41127ih"
                 }
             },
             "tags": [
@@ -1085,7 +1088,8 @@
             "getter": {
                 "qq": {
                     "mid": "003MKHmn4FF2PV"
-                }
+                },
+                "bilibili":{"bvid":"BV1da411178m"}
             },
             "tags": [
                 "A"
@@ -1157,6 +1161,35 @@
             ],
             "info": "-",
             "score": 95
+        },
+        "00060":{
+            "name":"依存症-Acoustic.ver",
+            "artist":"Warma",
+            "getter":{
+                "bilibili":{
+                    "bvid":"BV1Xs411y7By"
+                }
+            },
+            "tags":[
+                "A",
+                "Warma"
+            ],
+            "info":"-",
+            "score":85
+        },
+        "00061":{
+            "name":"桃花笑财到",
+            "artist":"hanser",
+            "getter":{
+                "bilibili":{
+                    "bvid":"BV1D4ZJBUExo"
+                }
+            },
+            "tags":[
+                "A"
+            ],
+            "info":"-",
+            "score":80
         }
     }
 }
