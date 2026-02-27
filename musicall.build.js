@@ -73,8 +73,10 @@ const musicAll={
                         let ks=reqsthens[ri].returns;
                         ks.forEach(k2=>{
                             if(k2=='img'){
+                                r[k2]=r[k2].replace("?param=300x300",'').replace("http://","https://");
                                 musicAll.check(r[k2],'img',ok=>ok?cbs[k2](r[k2]):reqsthens[ri].cf('Failed to load '+k2+' img'));
                             }else if(k2=='music'){
+                                r[k2]=r[k2].replace("http://","https://");
                                 musicAll.check(r[k2],'music',ok=>ok?cbs[k2](r[k2]):reqsthens[ri].cf('Failed to load '+k2+' music'));
                             }else{
                                 try{

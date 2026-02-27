@@ -346,7 +346,7 @@ function playMusic(index){
         },
         img(url){
             if(!url) throw "Get Cover Failed";
-            utl=url.replace("?param=300x300",'').replace("http://","https://");
+            url=url.replace("?param=300x300",'').replace("http://","https://");
             MP.setCover(url);
             $(".floatb img").sr(url);
             let img=url
