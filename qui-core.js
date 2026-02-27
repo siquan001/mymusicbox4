@@ -16,8 +16,8 @@
             function resize(){
                 var w=window.innerWidth;
                 var h=window.innerHeight;
-                document.body.style.width=w+"px";
-                document.body.style.height=h+"px";
+                document.body.css('width',w+"px");
+                document.body.css('height',h+"px");
                 fn(w,h);
             }
             

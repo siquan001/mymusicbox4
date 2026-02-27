@@ -24,6 +24,32 @@ window.on("load",()=>{
                     }
                 }
             }
+            if("mediaSession" in navigator){
+                let metadata = new MediaMetadata({
+                    title: "雨竹音乐盒",
+                    artist: "yz小雨竹",
+                    artwork: []
+                });
+                navigator.mediaSession.metadata = metadata;
+                navigator.mediaSession.setActionHandler("play",()=>{
+                    MP.audio.play();
+                });
+                navigator.mediaSession.setActionHandler("pause",()=>{
+                    MP.audio.pause();
+                });
+                navigator.mediaSession.setActionHandler("previoustrack",()=>{
+                    MP.EL.$(".btn.lst").click();
+                });
+                navigator.mediaSession.setActionHandler("nexttrack",()=>{
+                    MP.EL.$(".btn.nxt").click();
+                });
+                navigator.mediaSession.setActionHandler('seekbackward',  ()=>{
+                    MP.audio.currentTime -= 10;
+                });
+                navigator.mediaSession.setActionHandler('seekforward',  ()=>{
+                    MP.audio.currentTime += 10;
+                });
+            }
         })
         initGroup();
     }).catch(e=>{
@@ -38,6 +64,71 @@ window.on("resize",()=>{
     focusGroup(nowfocus);
 })
 
+initResize(_r)
+function _r(){
+    let vh=window.innerHeight*0.01;
+    if(vh===0){
+        setTimeout(_r,50);
+        return;
+    }
+    $("#sts").innerHTML=`body{
+        font-size:${2.5*vh}px;
+    }
+    .page.group-p .title{
+        height: ${7*vh}px;
+        margin-top: ${3*vh}px;
+        line-height: ${7*vh}px;
+    }
+    .group-show .cj .m-icon svg,
+    .page.list-p .right .topper,
+    .page.list-p .right .list .item{
+        height: ${7*vh}px;
+    }
+    .group{
+        width: ${48*vh}px;
+        height: ${48*vh}px;
+        margin:${4*vh}px ;
+        margin-top: ${16*vh}px;
+    }
+    .group.selected{
+        width: ${64*vh}px;
+        height: ${64*vh}px;
+        margin-top: ${8*vh}px;
+    }
+    .group.selected .info{
+        line-height: ${9.6*vh}px;
+    }
+    .page.list-p .right .topper>*,
+    .page.list-p .right .list .item .songname{
+        line-height: ${7*vh}px;
+    }
+    .page.list-p .right .list{
+        height: ${93*vh}px;
+    }
+    .page.list-p .right .list .item .songartist{
+        line-height: ${3*vh}px;
+    }
+    .page.list-p .right .list .item:hover .songname{
+        line-height: ${4*vh}px;
+    }
+    .page.list-p .right .list .item .playing-svg{
+        width: ${4*vh}px;
+        height: ${7*vh}px;
+    }
+    .page.list-p .right .list .item .playing-svg svg{
+        width: ${2*vh}px;
+        height: ${2*vh}px;
+    }
+    .back-icon{
+        width: ${7*vh}px;
+        height: ${7*vh}px;
+    }
+    .musicplayer .btn{
+        width: ${5*vh}px;
+        height: ${5*vh}px;
+        margin: ${0.5*vh}px;
+    }`
+}
 let nowfocus=-1;
 let group_size=-1;
 
@@ -236,18 +327,39 @@ function playMusic(index){
     MP.show();
     MP.reset();
     MP.setName(md.name).setArtist(md.artist).setDesc(md.info).setTags(md.tags).setScore(md.score);
+    document.title=md.name+" - "+md.artist;
     $(".floatb .name").text(md.name);
     $(".floatb .artist").text(md.artist);
     $(".floatb img").css("opacity",0);
+    if ("mediaSession" in navigator) {
+        let metadata = new MediaMetadata({
+            title: md.name,
+            artist: md.artist,
+            artwork: []
+        });
+        navigator.mediaSession.metadata = metadata;
+    }
     musicAll.get(md.getter,{
         music(url){
             if(!url) throw "Get Music Failed";
-            MP.play(url);
+            MP.play(url.replace("http://","https://"));
         },
         img(url){
             if(!url) throw "Get Cover Failed";
-            MP.setCover(url.replace("?param=300x300",''));
+            utl=url.replace("?param=300x300",'').replace("http://","https://");
+            MP.setCover(url);
             $(".floatb img").sr(url);
+            let img=url
+            if ("mediaSession" in navigator) {
+                let metadata = new MediaMetadata({
+                    title: md.name,
+                    artist: md.artist,
+                    artwork: [
+                        { src: img, sizes: "256x256", type: "image/jpeg" }
+                    ]
+                });
+                navigator.mediaSession.metadata = metadata;
+            }
         },
         lrc(lrcstr){
             if(!lrcstr){
@@ -260,6 +372,7 @@ function playMusic(index){
             MP.setTrans(transtr);
         }
     })
+    
 }
 
 const LIGHT=1;
@@ -463,11 +576,11 @@ const MP={
     setMainColor(colors){
         this.st.maincolor=colors;
         if(this.st.usemaincolor&&colors){
-            $("style#mp_maincolor").text(`.musicplayer{
+            $("style#mp_maincolor").text(`body{
                 --bgcolor:${this.st.maincolor[0]};
                 --textcolor:${this.st.maincolor[1]};
             }
-            .musicplayer.dark{
+            body.dark{
                 --bgcolor:${this.st.maincolor[2]};
                 --textcolor:${this.st.maincolor[3]};
             }`)
@@ -749,7 +862,8 @@ const MP={
             }
         })
 
-        document.head.append(el("style#mp_maincolor"));
+        document.body.append(el("style#mp_maincolor"));
+
     }
 }
 MP._init();
@@ -804,3 +918,19 @@ MP.on("theme",(theme)=>{
         document.body.removeClass("dark");
     }
 })
+
+document.on("visibilitychange",()=>{
+    if(document.hidden){
+        document.body.hide();
+    }else{
+        document.body.show();
+    }
+})
+
+
+window.on('beforeunload', () => {
+    MP.audio.pause();
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = null;
+    }
+});

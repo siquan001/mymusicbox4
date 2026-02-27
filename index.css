@@ -3,7 +3,20 @@
 *{
     margin: 0;
     padding: 0;
-    transition: all .3s linear;
+    transition: background .3s,
+    color .3s,
+    top .3s,
+    left .3s,
+    right .3s,
+    bottom .3s,
+    width .3s,
+    height .3s,
+    line-height .3s,
+    opacity .3s,
+    transform .3s,
+    margin .3s,
+    padding .3s
+    ;
 }
 
 html{
@@ -11,18 +24,22 @@ html{
 }
 body{
     position: relative;
-    width: 100%;
-    height:100vh;
     font-family: 'Noto Sans SC','Noto Sans JP', sans-serif;
     overflow: hidden;
-    color: #000;
     user-select: none;
     font-size: 2.5vh;
+    transition: background .3s,
+    color .3s;
+
+    --textcolor:#000;
+    --bgcolor:#fff;
+    background-color: var(--bgcolor);
+    color:var(--textcolor);
 }
 
 body.dark{
-    background-color: #333;
-    color: #fff;
+    --textcolor:#fff;
+    --bgcolor:#333;
     color-scheme: dark;
 }
 
@@ -34,11 +51,7 @@ body.dark{
     left:0;
     opacity: 0;
     transition: opacity .2s;
-    background-color: #fff;
-}
-
-body.dark .page{
-    background-color: #333;
+    background-color: inherit;
 }
 
 .page.ready{
@@ -103,23 +116,15 @@ body.dark .page{
     position: absolute;
     top: 0;
     left: 0;
-    background-image: linear-gradient(to right,#fff , transparent);
+    background-image: linear-gradient(to right,var(--bgcolor) , transparent);
 }
 
 .group-show .cj.nxt{
     position: absolute;
     top: 0;
     right: 0;
-    background-image: linear-gradient(to left,#fff , transparent);
+    background-image: linear-gradient(to left,var(--bgcolor) , transparent);
 
-}
-
-body.dark .group-show .cj.lst{
-    background-image: linear-gradient(to right,#333 , transparent);
-}
-
-body.dark .group-show .cj.nxt{
-    background-image: linear-gradient(to left,#333 , transparent);
 }
 
 .groups{
@@ -207,15 +212,11 @@ body.dark .group .info{
 }
 
 .page.list-p .left .name{
-    color: #000;
+    color: var(--textcolor);
     font-weight: bold;
     line-height: 1.5em;
     font-size: 1.5em;
     padding-bottom: 1vh;
-}
-
-body.dark .page.list-p .left .name{
-    color: #fff;
 }
 
 .page.list-p .right{
@@ -347,12 +348,10 @@ body.dark .back-icon:hover{
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 100vh;
+    top: 100%;
     left: 0;
     z-index: 999;
     /* display: none; */
-    --textcolor:#000;
-    --bgcolor:#fff;
     background-color: var(--bgcolor);
     color: var(--textcolor);
     overflow: hidden;
@@ -362,10 +361,6 @@ body.dark .back-icon:hover{
     top: 0;
 }
 
-.musicplayer.dark{
-    --textcolor:#fff;
-    --bgcolor:#333;
-}
 
 .musicplayer .btn{
     width: 5vh;
@@ -384,6 +379,7 @@ body.dark .back-icon:hover{
     height: 50%;
 }
 
+/* now */
 .musicplayer .topper{
     width: 100%;
     height: 6vh;
@@ -745,11 +741,12 @@ body.dark .back-icon:hover{
     position: absolute;
     bottom: 4vh;
     left: calc(50% - 15vh);
-    background-color: #fff;
+    background-color: var(--bgcolor,#fff);
+    color:var(--textcolor);
 }
 
 body.dark .floatb{
-    background-color: #000;
+    background-color: var(--bgcolor,#000);
     box-shadow: #666 0 0 1vh;
 
 }
