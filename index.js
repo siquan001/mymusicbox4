@@ -65,69 +65,20 @@ window.on("resize",()=>{
 })
 
 initResize(_r)
-function _r(){
-    let vh=window.innerHeight*0.01;
+function _r(w,h){
+    let vh=h*0.01;
     if(vh===0){
         setTimeout(_r,50);
         return;
     }
     $("#sts").innerHTML=`body{
-        font-size:${2.5*vh}px;
-    }
-    .page.group-p .title{
-        height: ${7*vh}px;
-        margin-top: ${3*vh}px;
-        line-height: ${7*vh}px;
-    }
-    .group-show .cj .m-icon svg,
-    .page.list-p .right .topper,
-    .page.list-p .right .list .item{
-        height: ${7*vh}px;
-    }
-    .group{
-        width: ${48*vh}px;
-        height: ${48*vh}px;
-        margin:${4*vh}px ;
-        margin-top: ${16*vh}px;
-    }
-    .group.selected{
-        width: ${64*vh}px;
-        height: ${64*vh}px;
-        margin-top: ${8*vh}px;
-    }
-    .group.selected .info{
-        line-height: ${9.6*vh}px;
-    }
-    .page.list-p .right .topper>*,
-    .page.list-p .right .list .item .songname{
-        line-height: ${7*vh}px;
-    }
-    .page.list-p .right .list{
-        height: ${93*vh}px;
-    }
-    .page.list-p .right .list .item .songartist{
-        line-height: ${3*vh}px;
-    }
-    .page.list-p .right .list .item:hover .songname{
-        line-height: ${4*vh}px;
-    }
-    .page.list-p .right .list .item .playing-svg{
-        width: ${4*vh}px;
-        height: ${7*vh}px;
-    }
-    .page.list-p .right .list .item .playing-svg svg{
-        width: ${2*vh}px;
-        height: ${2*vh}px;
-    }
-    .back-icon{
-        width: ${7*vh}px;
-        height: ${7*vh}px;
-    }
-    .musicplayer .btn{
-        width: ${5*vh}px;
-        height: ${5*vh}px;
-        margin: ${0.5*vh}px;
+        --vh:${vh}px;
     }`
+    if(w<h){
+        $("body").addClass("zp");
+    }else{
+        $("body").removeClass("zp");
+    }
 }
 let nowfocus=-1;
 let group_size=-1;
@@ -327,6 +278,11 @@ function playMusic(index){
     MP.show();
     MP.reset();
     MP.setName(md.name).setArtist(md.artist).setDesc(md.info).setTags(md.tags).setScore(md.score);
+    if(md.tags.includes("纯音乐")){
+        MP.EL.addClass("pure");
+    }else{
+        MP.EL.removeClass("pure");
+    }
     document.title=md.name+" - "+md.artist;
     $(".floatb .name").text(md.name);
     $(".floatb .artist").text(md.artist);
@@ -576,11 +532,11 @@ const MP={
     setMainColor(colors){
         this.st.maincolor=colors;
         if(this.st.usemaincolor&&colors){
-            $("style#mp_maincolor").text(`body{
+            $("style#mp_maincolor").text(`body,body *,body *::after,body *::before{
                 --bgcolor:${this.st.maincolor[0]};
                 --textcolor:${this.st.maincolor[1]};
             }
-            body.dark{
+            body.dark,body.dark *,body.dark *::after,body.dark *::before{
                 --bgcolor:${this.st.maincolor[2]};
                 --textcolor:${this.st.maincolor[3]};
             }`)
@@ -782,7 +738,7 @@ const MP={
             function then(){
                 rli=null;
                 var tlitop=tli.offsetTop+tli.getRect().height*.5;
-                _.EL.$(".lrclist").css("transform","translateY(calc(46vh - "+tlitop+"px))");
+                _.EL.$(".lrclist").css("transform","translateY(calc((46 * var(--vh)) - "+tlitop+"px))");
                 tli=null;
             }
             then();
@@ -832,16 +788,22 @@ const MP={
         })
 
         this.EL.$(".tab.t-player").on("click",()=>{
+            this.EL.$$(".tab").removeClass("active");
             this.EL.$(".tab.t-player").addClass("active");
-            this.EL.$(".tab.t-info").removeClass("active");
-            this.EL.$(".lrcs").show();
-            this.EL.$(".infos").hide();
+            this.EL.removeClass("showinfo");
+            this.EL.removeClass("showlrc");
         })
         this.EL.$(".tab.t-info").on("click",()=>{
+            this.EL.$$(".tab").removeClass("active");
             this.EL.$(".tab.t-info").addClass("active");
-            this.EL.$(".tab.t-player").removeClass("active");
-            this.EL.$(".infos").show("flex");
-            this.EL.$(".lrcs").hide();
+            this.EL.removeClass("showlrc");
+            this.EL.addClass("showinfo");
+        })
+        this.EL.$(".tab.t-lrc").on("click",()=>{
+            this.EL.$$(".tab").removeClass("active");
+            this.EL.$(".tab.t-lrc").addClass("active");
+            this.EL.addClass("showlrc");
+            this.EL.removeClass("showinfo");
         })
 
         this.EL.$(".btn.lst").on("click",()=>{
@@ -927,6 +889,13 @@ document.on("visibilitychange",()=>{
     }
 })
 
+window.on("focus",()=>{
+   document.body.removeClass("perf"); 
+});
+
+window.on("blur",()=>{
+    document.body.addClass("perf");
+})
 
 window.on('beforeunload', () => {
     MP.audio.pause();
