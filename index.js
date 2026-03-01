@@ -205,7 +205,7 @@ function resortList(){
             sortedList.sort((a,b)=>{
                 a=MList.musics[a].score;
                 b=MList.musics[b].score;
-                return a>b;
+                return a>b?1:-1;
             });
         break;
     }
@@ -284,6 +284,7 @@ function playMusic(index){
         MP.EL.removeClass("pure");
     }
     document.title=md.name+" - "+md.artist;
+    history.replaceState({}, "", "?mid="+nowplay);
     $(".floatb .name").text(md.name);
     $(".floatb .artist").text(md.artist);
     $(".floatb img").css("opacity",0);

@@ -1190,6 +1190,509 @@
             ],
             "info":"-",
             "score":80
+        },
+        "00062":{
+            "name": "Tojita Sekai",
+            "artist": "かめりあ",
+            "getter": {
+                "qq": {
+                    "mid": "003Q4sdo1pUOD4"
+                },
+                "netease": {
+                    "id": 1336689106
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐",
+                "音游"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00063":{
+            "name": "Alpha",
+            "artist": "C418",
+            "getter": {
+                "netease": {
+                    "id": 27961148
+                },
+                "qq": {
+                    "mid": "004Jbibm0JWY6m"
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐",
+                "MC"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00064":{
+            "name": "Aria Math",
+            "artist": "C418",
+            "getter": {
+                "qq": {
+                    "mid": "004GkiTY18ZBJr"
+                },
+                "netease": {
+                    "id": 27961159
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐",
+                "MC"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00065":{
+            "name": "dB doll",
+            "artist": "YUE.STEVEN,uen",
+            "getter": {
+                "qq": {
+                    "mid": "000qcAAD1dmhEP"
+                },
+                "netease": {
+                    "id": 1351240456
+                }
+            },
+            "tags": [
+                "A",
+                "日文",
+                "phigros"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00066":{
+            "name": "嘿咻狂想曲",
+            "artist": "艾索",
+            "getter": {
+                "qq": {
+                    "mid": "000NkGxB3V0Odr"
+                },
+                "netease": {
+                    "id": 28707142
+                }
+            },
+            "tags": [
+                "A"
+            ],
+            "info": "嘿咻嘿咻~",
+            "score": 80
+        },
+        "00067":{
+            "name": "温软宇宙",
+            "artist": "buckit 陈楒潼/浮云心丶/warma",
+            "getter": {
+                "qq": {
+                    "mid": "0020ufTf02hokf"
+                }
+            },
+            "tags": [
+                "A",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00068":{
+            "name": "我家里有蜘蛛！！！",
+            "artist": "warma",
+            "getter": {
+                "netease": {
+                    "id": 1381375896
+                }
+            },
+            "tags": [
+                "A",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00069":{
+            "name": "让风告诉你",
+            "artist": "花玲,喵☆酱,宴宁,kinsen",
+            "getter": {
+                "qq": {
+                    "mid": "004FRxOR3aBtuC"
+                },
+                "netease": {
+                    "id": 1818031620
+                }
+            },
+            "tags": [
+                "S"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00070":{
+            "name": "逐渐加快",
+            "artist": "warma",
+            "getter": {
+                "qq": {
+                    "mid": "0011BqY34Vlpe9"
+                }
+            },
+            "tags": [
+                "A",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 75
+        },
+        "00071":{
+            "name": "晚安喵",
+            "artist": "艾索",
+            "getter": {
+                "qq": {
+                    "mid": "003mWLfy1qPHT4"
+                },
+                "netease": {
+                    "id": 28875230
+                }
+            },
+            "tags": [
+                "S"
+            ],
+            "info": "-",
+            "score": 95
+        },
+        "00072":{
+            "name": "The Rose (尤克里里弹唱)",
+            "artist": "Warma",
+            "getter": {
+                "qq": {
+                    "mid": "000lMO5z4EPsTU"
+                },
+                "netease": {
+                    "id": 1489385263
+                }
+            },
+            "tags": [
+                "A",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00073":{
+            "name": "I really ∞",
+            "artist": "warma",
+            "getter": {
+                "qq": {
+                    "mid": "004V1xhU4U3clB"
+                },
+                "netease": {
+                    "id": 1395826900
+                }
+            },
+            "tags": [
+                "A",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 74
+        },
+        "00074":{
+            "name": "嘘",
+            "artist": "艾索",
+            "getter": {
+                "qq": {
+                    "mid": "003OLQWW4UGDp2"
+                },
+                "netease": {
+                    "id": 33891982
+                }
+            },
+            "tags": [
+                "S"
+            ],
+            "info": "-",
+            "score": 100
+        },
+        "00075":{
+            "name": "朝汐",
+            "artist": "warma",
+            "getter": {
+                "qq": {
+                    "mid": "001RMwND23b3dp"
+                },
+                "netease": {
+                    "id": 2019862177
+                }
+            },
+            "tags": [
+                "S",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00076":{
+            "name": "warma来了哦",
+            "artist": "Warma",
+            "getter": {
+                "qq": {
+                    "mid": "0025arNu3b73Nf"
+                },
+                "netease": {
+                    "id": 1383169741
+                }
+            },
+            "tags": [
+                "A",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 76
+        },
+        "00077":{
+            "name": "Aphasia",
+            "artist": "闫东炜",
+            "getter": {
+                "qq": {
+                    "mid": "000sr6MA29VBjx"
+                },
+                "netease": {
+                    "id": 1337794487
+                }
+            },
+            "tags": [
+                "S",
+                "phigros",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00078":{
+            "name": "K.Moe VIP (Extended Mix)",
+            "artist": "ZxNX",
+            "getter": {
+                "qq": {
+                    "mid": "004RqhpZ3P3r0n"
+                },
+                "netease": {
+                    "id": 2086306935
+                }
+            },
+            "tags": [
+                "S",
+                "phigros",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00079":{
+            "name": "Lifeline",
+            "artist": "Zeraphym 六翼使徒",
+            "getter": {
+                "qq": {
+                    "mid": "001DRnxC0twkty"
+                },
+                "netease": {
+                    "id": 38019092
+                }
+            },
+            "tags": [
+                "S",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00080":{
+            "name": "静かにHold Me Tight",
+            "artist": "中村さんそ/KMNZ LIZ/nyankobrq",
+            "getter": {
+                "qq": {
+                    "mid": "0032bdkE0avoUh"
+                },
+                "netease": {
+                    "id": 1430277803
+                }
+            },
+            "tags": [
+                "S",
+                "日文"
+            ],
+            "info": "-",
+            "score": 95
+        },
+        "00081":{
+            "name": "Step by Step",
+            "artist": "KARUT",
+            "getter": {
+                "qq": {
+                    "mid": "001nYpSO0Mkowq"
+                },
+                "netease": {
+                    "id": 2093260118
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00082":{
+            "name": "Rainbow Flavor!",
+            "artist": "SuggestedCopy7/Yashuu_",
+            "getter": {
+                "qq": {
+                    "mid": "001ezSVs4UsDEu"
+                },
+                "netease": {
+                    "id": 2039084825
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00083":{
+            "name": "八珍玉食",
+            "artist": "Hanser,warma,祖娅纳惜,早稻叽,泠鸢yousa,宴宁,爆裂菊是也,喵☆酱",
+            "getter": {
+                "qq": {
+                    "mid": "0041qOjZ1XpMZj"
+                },
+                "netease": {
+                    "id": 2124462308
+                }
+            },
+            "tags": [
+                "S"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00084":{
+            "name": "Reimei",
+            "artist": "影虎。",
+            "getter": {
+                "qq": {
+                    "mid": "001ivyAy42Kpen"
+                },
+                "netease": {
+                    "id": 1396181979
+                }
+            },
+            "tags": [
+                "S",
+                "phigros"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00085":{
+            "name": "今天不是明天 (feat. 兰音Reine)",
+            "artist": "电音联盟/音波狂潮/V-Festival/兰音Reine/PIKASONIC",
+            "getter": {
+                "qq": {
+                    "mid": "003IUdpN2DrWrb"
+                }
+            },
+            "tags": [
+                "S"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00086":{
+            "name": "BRAVE：ROAD",
+            "artist": "uma,モリモリあつし",
+            "getter": {
+                "qq": {
+                    "mid": "004S3yTC0yyAIK"
+                },
+                "netease": {
+                    "id": 2163588611
+                }
+            },
+            "tags": [
+                "A",
+                "rizline"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00087":{
+            "name": "心跳叮叮咚",
+            "artist": "iKz,warma",
+            "getter": {
+                "netease": {
+                    "id": 2617146758
+                }
+            },
+            "tags": [
+                "S",
+                "Warma"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00088":{
+            "name": "Pastel Lines",
+            "artist": "Reku Mochizuki",
+            "getter": {
+                "qq": {
+                    "mid": "000TRxha30FJ9W"
+                },
+                "netease": {
+                    "id": 2039140013
+                }
+            },
+            "tags": [
+                "A",
+                "rizline"
+            ],
+            "info": "-",
+            "score": 76
+        },
+        "00089":{
+            "name": "小小音乐会",
+            "artist": "冷魚",
+            "getter": {
+                "qq": {
+                    "mid": "003i6ELL3n7MU5"
+                },
+                "netease": {
+                    "id": 487847924
+                }
+            },
+            "tags": [
+                "S"
+            ],
+            "info": "-",
+            "score": 84
+        },
+        "00090":{
+            "name": "Usagi Fhap",
+            "artist": "Aice room",
+            "getter": {
+                "netease": {
+                    "id": 2059973927
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐"
+            ],
+            "info": "-",
+            "score": 78
         }
     }
 }
