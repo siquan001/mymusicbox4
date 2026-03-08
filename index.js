@@ -1,5 +1,5 @@
 let MList={};
-
+const OUTER_KEY='~$0';
 window.on("load",()=>{
     $(".page.ready .state").text("正在加载歌单...");
     get("musiclist.json").then(r=>{
@@ -13,17 +13,35 @@ window.on("load",()=>{
             // $(".page.list-p").fadeIn(200);
             // $(".page.group-p").hide(200);
             let b=new URL(location.href);
-            if(b.searchParams.get("mid")){
-                let mid=b.searchParams.get("mid");
-                if(MList.musics[mid]){
-                    openGroup("所有音乐");
-                    for(let i=0;i<sortedList.length;i++){
-                        if(mid==sortedList[i]){
-                            playMusic(i);
+            if(b.searchParams.get("type")){
+                let type=b.searchParams.get("type");
+                let ob={};
+                b.searchParams.forEach((v,k)=>{
+                    if(k!="type")ob[k]=v;
+                })
+                nowlistraw={
+                    [OUTER_KEY]:{
+                        getter: {
+                            [type]: ob
+                        }
+                    }
+                }
+                sortedList=[OUTER_KEY];
+                playMusic(0);
+            }else{
+                if(b.searchParams.get("mid")){
+                    let mid=b.searchParams.get("mid");
+                    if(MList.musics[mid]){
+                        openGroup("所有音乐");
+                        for(let i=0;i<sortedList.length;i++){
+                            if(mid==sortedList[i]){
+                                playMusic(i);
+                            }
                         }
                     }
                 }
             }
+            
             if("mediaSession" in navigator){
                 let metadata = new MediaMetadata({
                     title: "雨竹音乐盒",
@@ -274,20 +292,98 @@ function playMusic(index){
     if(q)q.addClass("playing");
     
     console.log(index,nowplay);
-    let md=MList.musics[sortedList[index]];
+    let md=nowlistraw[sortedList[index]];
     MP.show();
     MP.reset();
-    MP.setName(md.name).setArtist(md.artist).setDesc(md.info).setTags(md.tags).setScore(md.score);
-    if(md.tags.includes("纯音乐")){
-        MP.EL.addClass("pure");
+    if(nowplay==OUTER_KEY){
+        let un="<unknown>";
+        MP.setName(un).setArtist(un).setDesc(un).setTags([un]).setScore(un);
+        musicAll.get(md.getter,{
+            music(url){
+                if(!url) throw "Get Music Failed";
+                MP.play(url.replace("http://","https://"));
+            },
+            img(url){
+                if(!url) throw "Get Cover Failed";
+                url=url.replace("?param=300x300",'').replace("http://","https://");
+                MP.setCover(url);
+                $(".floatb img").sr(url);
+                let img=url
+                if ("mediaSession" in navigator) {
+                    let metadata = new MediaMetadata({
+                        title: md.name,
+                        artist: md.artist,
+                        artwork: [
+                            { src: img, sizes: "256x256", type: "image/jpeg" }
+                        ]
+                    });
+                    navigator.mediaSession.metadata = metadata;
+                }
+            },
+            lrc(lrcstr){
+                if(!lrcstr){
+                    MP.setLrc("[00:00.00] 暂无歌词");
+                }else{
+                    MP.setLrc(lrcstr);
+                }
+            },
+            trc(transtr){
+                MP.setTrans(transtr);
+            },
+            details(dt){
+                MP.setName(dt.name).setArtist(dt.artist);
+                document.title=dt.name+" - "+dt.artist;
+                $(".floatb .name").text(dt.name);
+                $(".floatb .artist").text(dt.artist);
+            }
+        })
     }else{
-        MP.EL.removeClass("pure");
+        MP.setName(md.name).setArtist(md.artist).setDesc(md.info).setTags(md.tags).setScore(md.score);
+        if(md.tags.includes("纯音乐")){
+            MP.EL.addClass("pure");
+        }else{
+            MP.EL.removeClass("pure");
+        }
+        document.title=md.name+" - "+md.artist;
+        history.replaceState({}, "", "?mid="+nowplay);
+        $(".floatb .name").text(md.name);
+        $(".floatb .artist").text(md.artist);
+        $(".floatb img").css("opacity",0);
+        musicAll.get(md.getter,{
+            music(url){
+                if(!url) throw "Get Music Failed";
+                MP.play(url.replace("http://","https://"));
+            },
+            img(url){
+                if(!url) throw "Get Cover Failed";
+                url=url.replace("?param=300x300",'').replace("http://","https://");
+                MP.setCover(url);
+                $(".floatb img").sr(url);
+                let img=url
+                if ("mediaSession" in navigator) {
+                    let metadata = new MediaMetadata({
+                        title: md.name,
+                        artist: md.artist,
+                        artwork: [
+                            { src: img, sizes: "256x256", type: "image/jpeg" }
+                        ]
+                    });
+                    navigator.mediaSession.metadata = metadata;
+                }
+            },
+            lrc(lrcstr){
+                if(!lrcstr){
+                    MP.setLrc("[00:00.00] 暂无歌词");
+                }else{
+                    MP.setLrc(lrcstr);
+                }
+            },
+            trc(transtr){
+                MP.setTrans(transtr);
+            }
+        })
     }
-    document.title=md.name+" - "+md.artist;
-    history.replaceState({}, "", "?mid="+nowplay);
-    $(".floatb .name").text(md.name);
-    $(".floatb .artist").text(md.artist);
-    $(".floatb img").css("opacity",0);
+    
     if ("mediaSession" in navigator) {
         let metadata = new MediaMetadata({
             title: md.name,
@@ -296,39 +392,7 @@ function playMusic(index){
         });
         navigator.mediaSession.metadata = metadata;
     }
-    musicAll.get(md.getter,{
-        music(url){
-            if(!url) throw "Get Music Failed";
-            MP.play(url.replace("http://","https://"));
-        },
-        img(url){
-            if(!url) throw "Get Cover Failed";
-            url=url.replace("?param=300x300",'').replace("http://","https://");
-            MP.setCover(url);
-            $(".floatb img").sr(url);
-            let img=url
-            if ("mediaSession" in navigator) {
-                let metadata = new MediaMetadata({
-                    title: md.name,
-                    artist: md.artist,
-                    artwork: [
-                        { src: img, sizes: "256x256", type: "image/jpeg" }
-                    ]
-                });
-                navigator.mediaSession.metadata = metadata;
-            }
-        },
-        lrc(lrcstr){
-            if(!lrcstr){
-                MP.setLrc("[00:00.00] 暂无歌词");
-            }else{
-                MP.setLrc(lrcstr);
-            }
-        },
-        trc(transtr){
-            MP.setTrans(transtr);
-        }
-    })
+    
     
 }
 
@@ -833,15 +897,26 @@ MP._init();
 MP.switchMainColor(true);
 MP.setUseTrans(true);
 
+function lst(){
+    if(nowplayindex<=0){
+        playMusic(sortedList.length-1);
+    }else{
+        playMusic(nowplayindex-1);
+    }
+}
+function nxt(){
+    if(nowplayindex>=sortedList.length-1){
+        playMusic(0);
+    }else{
+        playMusic(nowplayindex+1);
+    }
+}
+
 MP.on("lst",(e)=>{
     if(e.mode==RANDOM){
         playMusic(Math.floor(Math.random()*sortedList.length));
     }else{
-        if(nowplayindex<=0){
-            playMusic(sortedList.length-1);
-        }else{
-            playMusic(nowplayindex-1);
-        }
+        sortedDir==1?lst():nxt();
     }
 })
 
@@ -849,11 +924,7 @@ MP.on("nxt",(e)=>{
     if(e.mode==RANDOM){
         playMusic(Math.floor(Math.random()*sortedList.length));
     }else{
-        if(nowplayindex>=sortedList.length-1){
-            playMusic(0);
-        }else{
-            playMusic(nowplayindex+1);
-        }
+        sortedDir==-1?lst():nxt();
     }
 })
 
@@ -904,3 +975,20 @@ window.on('beforeunload', () => {
       navigator.mediaSession.metadata = null;
     }
 });
+
+document.on("keydown",(e)=>{
+    if(e.target.tagName=="INPUT"){
+        return;
+    }
+    if(e.key==" "){
+        if(MP.audio.paused){
+            MP.audio.play();
+        }else{
+            MP.audio.pause();
+        }
+    }else if(e.key=="ArrowLeft"){
+        lst();
+    }else if(e.key=="ArrowRight"){
+        nxt();
+    }
+})
