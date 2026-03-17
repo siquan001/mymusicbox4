@@ -118,7 +118,14 @@
             var newObj={};
             for(var key in obj){
                 if(typeof obj[key]==="object"&&obj[key]!==null){
-                    newObj[key]=this.cloneObj(obj[key]);
+                    if(Array.isArray(obj[key])){
+                        newObj[key]=[];
+                        for(var i=0;i<obj[key].length;i++){
+                            newObj[key].push(this.cloneObj(obj[key][i]));
+                        }
+                    }else{
+                        newObj[key]=this.cloneObj(obj[key]);
+                    }                    
                 }else{
                     newObj[key]=obj[key];
                 }
