@@ -2,7 +2,7 @@ let MList={};
 const OUTER_KEY='~$0';
 window.on("load",()=>{
     $(".page.ready .state").text("正在加载歌单...");
-    get("musiclist.json").then(r=>{
+    get("musiclist-min.json").then(r=>{
         MList=r;
         $(".page.ready .state").text("点击进入");
         $(".page.ready .state").className="state";
@@ -758,6 +758,13 @@ const MP={
                 this.audio.pause();
             }
         })
+        this.EL.$(".cover").on("click",()=>{
+            if(this.audio.paused){
+                this.audio.play();
+            }else{
+                this.audio.pause();
+            }
+        })
         const a0=a=>a<10?("0"+a):a;
         this.audio.on("canplay",()=>{
             this.play();
@@ -961,13 +968,13 @@ document.on("visibilitychange",()=>{
     }
 })
 
-window.on("focus",()=>{
-   document.body.removeClass("perf"); 
-});
+// window.on("focus",()=>{
+//    document.body.removeClass("perf"); 
+// });
 
-window.on("blur",()=>{
-    document.body.addClass("perf");
-})
+// window.on("blur",()=>{
+//     document.body.addClass("perf");
+// })
 
 window.on('beforeunload', () => {
     MP.audio.pause();

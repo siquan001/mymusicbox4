@@ -26,6 +26,10 @@ const musicAll={
         }
 
         function ft(platforms,k){
+            if(details.def&&details.def[k]){
+                cbs[k](details.def[k]);
+                return;
+            }
             let reqsthens=[];
             // 按平台和引擎优先级获取数据
             function qq(i,j){

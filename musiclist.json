@@ -1693,6 +1693,44 @@
             ],
             "info": "-",
             "score": 78
+        },
+        "00091":{
+            "name": "烽閻鸞錵",
+            "artist": "Lalot. vs Night Yard",
+            "getter": {
+                "bilibili": {
+                    "bvid": "BV19zFee5EyB"
+                },
+                "def":{
+                    "img":"https://p2.music.126.net/Xbb_QAcZ_CW0AvEDQtJdIw==/109951172804643401.jpg"
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐",
+                "Milthm"
+            ],
+            "info": "-",
+            "score": 78
+        },
+        "00092":{
+            "name": "また あした (明天见)",
+            "artist": "悠木碧",
+            "getter": {
+                "qq": {
+                    "mid": "002Gkbzf0Vfrkz"
+                },
+                "netease": {
+                    "id": 28138666
+                }
+            },
+            "tags": [
+                "S",
+                "日语",
+                "魔法少女小圆"
+            ],
+            "info": "-",
+            "score": 90
         }
     }
 }

@@ -1,3 +1,5 @@
+/* qui-core 1.1.0 MIT License author:siquan001 */
+
 (function(e){
     if(!window.qui){
         window.qui=e();
@@ -7,9 +9,9 @@
 
     var sq={
         about:{
-            name:"qui",
+            name:"qui-core",
             version:"1.1.0",
-            author:"siquan",
+            author:"siquan001",
             desc:"web开发辅助工具库"
         },
         initResize:function(fn=function(){}){
