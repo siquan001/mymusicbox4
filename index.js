@@ -290,20 +290,23 @@ function playMusic(index){
     if(q)q.removeClass("playing");
     q=$('.page.list-p .list [data-mid="'+nowplay+'"]');
     if(q)q.addClass("playing");
-    
-    console.log(index,nowplay);
     let md=nowlistraw[sortedList[index]];
     MP.show();
     MP.reset();
+    let issets=[];
     if(nowplay==OUTER_KEY){
         let un="<unknown>";
         MP.setName(un).setArtist(un).setDesc(un).setTags([un]).setScore(un);
         musicAll.get(md.getter,{
             music(url){
+                if(nowplayindex!=index||issets[0])return;
+                issets[0]=1;
                 if(!url) throw "Get Music Failed";
                 MP.play(url.replace("http://","https://"));
             },
             img(url){
+                if(nowplayindex!=index||issets[1])return;
+                issets[1]=1;
                 if(!url) throw "Get Cover Failed";
                 url=url.replace("?param=300x300",'').replace("http://","https://");
                 MP.setCover(url);
@@ -321,6 +324,8 @@ function playMusic(index){
                 }
             },
             lrc(lrcstr){
+                if(nowplayindex!=index||issets[2])return;
+                issets[2]=1;
                 if(!lrcstr){
                     MP.setLrc("[00:00.00] 暂无歌词");
                 }else{
@@ -328,9 +333,13 @@ function playMusic(index){
                 }
             },
             trc(transtr){
+                if(nowplayindex!=index||issets[3])return;
+                issets[3]=1;
                 MP.setTrans(transtr);
             },
             details(dt){
+                if(nowplayindex!=index||issets[4])return;
+                issets[4]=1;
                 MP.setName(dt.name).setArtist(dt.artist);
                 document.title=dt.name+" - "+dt.artist;
                 $(".floatb .name").text(dt.name);
@@ -351,10 +360,14 @@ function playMusic(index){
         $(".floatb img").css("opacity",0);
         musicAll.get(md.getter,{
             music(url){
+                if(nowplayindex!=index||issets[0])return;
+                issets[0]=1;
                 if(!url) throw "Get Music Failed";
                 MP.play(url.replace("http://","https://"));
             },
             img(url){
+                if(nowplayindex!=index||issets[1])return;
+                issets[1]=1;
                 if(!url) throw "Get Cover Failed";
                 url=url.replace("?param=300x300",'').replace("http://","https://");
                 MP.setCover(url);
@@ -372,6 +385,8 @@ function playMusic(index){
                 }
             },
             lrc(lrcstr){
+                if(nowplayindex!=index||issets[2])return;
+                issets[2]=1;
                 if(!lrcstr){
                     MP.setLrc("[00:00.00] 暂无歌词");
                 }else{
@@ -379,6 +394,8 @@ function playMusic(index){
                 }
             },
             trc(transtr){
+                if(nowplayindex!=index||issets[3])return;
+                issets[3]=1;
                 MP.setTrans(transtr);
             }
         })

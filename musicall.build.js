@@ -12,10 +12,13 @@ const _config={
 const _engine={}
 
 const musicAll={
+    timeLimit: 5000,
+    timeouts:[],
     config(){
         return _config;
     },
     get(details,cbs){
+        this.timeouts.forEach(t=>clearTimeout(t));
         let platformPx={};
         let plEnginePx={};
         let q_cache={}
@@ -55,8 +58,10 @@ const musicAll={
                     for(let x=0;x<reqsthens.length;x++){
                         if(reqsthens[x].pl==pl&&reqsthens[x].en==ens[j]){
                             if(reqsthens[x].actuallyRequest.find(k2=>k2==k)){
-                                reqsthens[x].returns.push(k);
-                                reqsthens[x].nexts.push(next);
+                                if(!reqsthens[x].returns.find(k2=>k2==k)){
+                                    reqsthens[x].returns.push(k);
+                                    reqsthens[x].nexts.push(next);
+                                }
                                 return;
                             }                            
                         }
@@ -74,6 +79,7 @@ const musicAll={
                     }
                     let ri=reqsthens.length;
                     let rf=function(r){
+                        clearTimeout(csid);
                         let ks=reqsthens[ri].returns;
                         ks.forEach(k2=>{
                             if(k2=='img'){
@@ -111,7 +117,9 @@ const musicAll={
                         }
                     }
                     let cf=function(reason){
+                        clearTimeout(csid);
                         let ks=reqsthens[ri].returns;
+                        console.log(reqsthens[ri]);
                         console.warn(`在尝试于 ${pl} 平台的 ${ens[j]} 引擎获取 ${ks.join(',')} 时，出现错误，原因如下`,reason);
                         reqsthens[ri].nexts.forEach(ne=>ne());
                     }
@@ -122,7 +130,13 @@ const musicAll={
                         rf,cf,
                         pl,en:ens[j]
                     }
-                    en.get(det,k).then(rf).catch(cf)
+
+                    en.get(det,k).then(rf).catch(cf);
+                    let csid=musicAll.timeouts.length;
+                    musicAll.timeouts.push(setTimeout(()=>{
+                        cf("请求超时");
+                        rf=()=>{};
+                    },musicAll.timeLimit));
                 }else{
                     next();
                 }
