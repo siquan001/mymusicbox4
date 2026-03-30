@@ -363,7 +363,7 @@ const musicAll={
             if(!details.id){
                 throw musicAll.ctErr(0,details,'id');
             }
-            let url='https://siquan-api.piz7j.cn/api/gequbao';
+            let url='https://siquan-api.ck54k.cn/api/gequbao';
             let data={
                 id : details.id,
             }

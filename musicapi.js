@@ -463,7 +463,7 @@ var musicapi = {
     return a;
   },
   _gequbao_search: function (keyword, cb, details) {
-    var url = 'https://siquan-api.piz7j.cn/api/gequbaosearch?s='+keyword;
+    var url = 'https://siquan-api.ck54k.cn/api/gequbaosearch?s='+keyword;
     var a=musicapi._request(url, function (data) {
       var res = {
         total: 10,
