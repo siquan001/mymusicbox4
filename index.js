@@ -173,6 +173,20 @@ let sortedDir=1;
 let nowplay=null;
 let nowplayindex=-1;
 
+function getRandomList(list,n){
+    let rlist={};
+    let ks=Object.keys(list);
+    for(let i=0;i<n;i++){
+        let k=ks[Math.floor(ks.length*Math.random())];
+        if(rlist[k]){
+            i--;
+            continue;
+        }
+        rlist[k]=cloneObj(list[k]);
+    }
+    return rlist;
+}
+
 function openGroup(gn){
     $(".page.list-p").fadeIn(200);
     $(".page.group-p").fadeOut(200);
@@ -180,8 +194,12 @@ function openGroup(gn){
     $(".list-p .left .name").text(gn);
     $(".list-p .left .desc").text(MList.group[gn].desc);
     if(MList.group[gn].sp){
-        if(MList.group[gn].sp=="all"){
+        switch(MList.group[gn].sp){
+            case "all":
             nowlistraw=cloneObj(MList.musics);
+            break;
+            case "random":
+            nowlistraw=getRandomList(MList.musics,Math.floor(8*Math.random()+10));
         }
     }else{
         nowlistraw={};
@@ -372,6 +390,9 @@ function playMusic(index){
                 url=url.replace("?param=300x300",'').replace("http://","https://");
                 MP.setCover(url);
                 $(".floatb img").sr(url);
+                if($(".list-p .left .name").text()=="随机歌曲"){
+                    $(".list-p .left img").sr(url);
+                }
                 let img=url
                 if ("mediaSession" in navigator) {
                     let metadata = new MediaMetadata({

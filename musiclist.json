@@ -5,6 +5,11 @@
             "desc":"音乐盒子里的所有音乐",
             "img":"https://p2.music.126.net/hVpp2RXEtvsgvevE5b3tcA==/109951165409657142.jpg"
         },
+        "随机歌曲":{
+            "sp":"random",
+            "desc":"随机挑选10~18首歌曲组成一个小歌单",
+            "img":"https://p1.music.126.net/2xUJznHiiJSJ6vgHqVxnHw==/109951171347059044.jpg"
+        },
         "S":{
             "tag":["S"],
             "desc":"我最喜欢的音乐集合喵~",
