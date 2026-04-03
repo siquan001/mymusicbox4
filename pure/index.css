@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+}
+
+.music-card{
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    box-shadow: #aaa 0 1px 5px;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+.music-card img{
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+    margin-bottom: 0;
+    box-shadow: #aaa 0 1px 5px;
+    border-radius: 20px;
+}
+.music-card .music-info{
+    padding: 10px 0;
+}
+.music-card .music-info .songname{
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.music-card .music-info .artist{
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #555;
+}
+
+.music-card audio{
+    height: 40px;
+    width:100%;
+}
+
+.music-card .btn{
+    width: 65px;
+    margin: 5px;
+    float: left;
+    font-size: 12px;
+    background-color: #888;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color:#fff;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.music-card .btn:hover{
+    background-color: #555;
+}
+
+.playlist{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,.5);
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: all .2s;
+}
+
+.playlist.show{
+    pointer-events: all;
+    opacity: 1;
+}
+
+.playlist .list{
+    width: 100%;
+    height: 65%;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    position: absolute;
+    bottom:-65%;
+    left:0;
+    transition: all .2s;
+}
+
+.playlist.show .list{
+    bottom:0;
+    padding-top: 20px;
+}
+
+.playlist .list .item{
+    width:calc(100% - 20px);
+    padding: 5px 10px;
+    height: 30px;
+    overflow: hidden;
+    transition: all .2s;
+}
+
+.playlist .list .item:hover{
+    background-color: #eee;
+}
+.playlist .list .item .item-n{
+    line-height: 30px;
+    transition: all .2s;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+.playlist .list .item .item-a{
+    line-height: 14px;
+    font-size: 12px;
+    color: #666;
+}
+.playlist .list .item:hover .item-n{
+    line-height: 16px;
+    padding-bottom: 0px;
+}
+.playlist .list .item.active{
+    background-color: rgb(220, 238, 252);
+}
+.playlist .list .item.active .item-n{
+    color: #09f;
+    font-weight: bold;
+    line-height: 16px;
+    padding-bottom: 0px;
+}
+.playlist .list .item.active .item-a{
+    color: #09f;
+}
