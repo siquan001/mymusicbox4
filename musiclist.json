@@ -1824,6 +1824,317 @@
             ],
             "info": "-",
             "score": 90
+        },
+        "00096":{
+            "name": "Palette",
+            "artist": "Kirara Magic",
+            "getter": {
+                "netease": {
+                    "id": 1988848396
+                },
+                "qq": {
+                    "mid": "001fkMcI1BvQmZ"
+                },
+                "gequbao": {
+                    "id": "1557423"
+                }
+            },
+            "tags": [
+                "纯音乐",
+                "A"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00098":{
+            "name": "Oshama Scramble!",
+            "artist": "t+pazolite",
+            "getter": {
+                "qq": {
+                    "mid": "004KsQov4Yoo2r"
+                },
+                "netease": {
+                    "id": 1962446272
+                }
+            },
+            "tags": [
+                "纯音乐",
+                "A",
+                "音游"
+            ],
+            "info": "-",
+            "score": 70
+        },
+        "00099":{
+            "name": "PRAGMATISM",
+            "artist": "Laur",
+            "getter": {
+                "qq": {
+                    "mid": "000Gz1oe0Pofm9"
+                },
+                "netease": {
+                    "id": 1399840117
+                },
+                "gequbao": {
+                    "id": "89027"
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐",
+                "Arcaea"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00100":{
+            "name": "アンビバレンス (矛盾心理)",
+            "artist": "すりぃ/相沢",
+            "getter": {
+                "qq": {
+                    "mid": "003TGpsE0mvC5S"
+                },
+                "netease": {
+                    "id": 2053586973
+                },
+                "gequbao": {
+                    "id": "7641223"
+                }
+            },
+            "tags": [
+                "S",
+                "日文",
+                "音游"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "00101":{
+            "name": "天天天国地獄国 (feat. ななひら & P丸様。)",
+            "artist": "Aiobahn +81/Nanahira/P丸様｡",
+            "getter": {
+                "qq": {
+                    "mid": "002PZvdE1EqUQV"
+                },
+                "netease": {
+                    "id": 3341414489
+                },
+                "gequbao": {
+                    "id": "22253030"
+                }
+            },
+            "tags": [
+                "A",
+                "日文"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00102":{
+            "name": "Death By Glamour",
+            "artist": "Toby Fox",
+            "getter": {
+                "qq": {
+                    "mid": "004JoElp0Y77uW"
+                },
+                "netease": {
+                    "id": 39227620
+                },
+                "gequbao": {
+                    "id": "1705579"
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐",
+                "UNDERTALE"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00103":{
+            "name": "Last Goodbye",
+            "artist": "Toby Fox",
+            "getter": {
+                "qq": {
+                    "mid": "004CEuoC2j6wUm"
+                },
+                "netease": {
+                    "id": 39224658
+                },
+                "gequbao": {
+                    "id": "675166"
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐",
+                "UNDERTALE"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00104":{
+            "name": "His Theme",
+            "artist": "Toby Fox",
+            "getter": {
+                "qq": {
+                    "mid": "000WbhMB3NCyYg"
+                },
+                "netease": {
+                    "id": 39227633
+                },
+                "gequbao": {
+                    "id": "74520"
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐",
+                "UNDERTALE"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00105":{
+            "name": "MEGALOVANIA (Camellia Remix)",
+            "artist": "かめりあ",
+            "getter": {
+                "qq": {
+                    "mid": "000ISyz53TMbZ1"
+                },
+                "netease": {
+                    "id": 1435577041
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐",
+                "UNDERTALE"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00106":{
+            "name": "AbsoluTe disoRdeR",
+            "artist": "Aiss/takehirotei/Riya/rN",
+            "getter": {
+                "qq": {
+                    "mid": "004KEOlF384N77"
+                },
+                "netease": {
+                    "id": 2696195945
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐",
+                "Phigros"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00107":{
+            "name": "world.execute(me);",
+            "artist": "Mili",
+            "getter": {
+                "qq": {
+                    "mid": "000SMH6F05TVNQ"
+                },
+                "netease": {
+                    "id": 435278010
+                },
+                "gequbao": {
+                    "id": "111339"
+                }
+            },
+            "tags": [
+                "A",
+                "英文"
+            ],
+            "info": "-",
+            "score": 80
+        },
+        "00108":{
+            "name": "Alice in a xxxxxxxx",
+            "artist": "浅羽ロキ",
+            "getter": {
+                "qq": {
+                    "mid": "001Ympag4gDIin"
+                },
+                "netease": {
+                    "id": 1357395602
+                },
+                "gequbao": {
+                    "id": "5350501"
+                }
+            },
+            "tags": [
+                "A",
+                "纯音乐",
+                "Phigros"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00109":{
+            "name": "速溶霓虹",
+            "artist": "熊子/Ank",
+            "getter": {
+                "qq": {
+                    "mid": "003CNfYn1T6Smg"
+                },
+                "netease": {
+                    "id": 1404531407
+                },
+                "gequbao": {
+                    "id": "395325"
+                }
+            },
+            "tags": [
+                "A"
+            ],
+            "info": "-",
+            "score": 85
+        },
+        "00110":{
+            "name": "Dot-Line(feat.ななひら)",
+            "artist": "A-39,沙包P,ななひら",
+            "getter": {
+                "qq": {
+                    "mid": "002k3Ljx0DskMT"
+                },
+                "netease": {
+                    "id": 2611652634
+                }
+            },
+            "tags": [
+                "S",
+                "日文",
+                "rizline"
+            ],
+            "info": "-",
+            "score": 90
+        },
+        "silent":{
+            "name": "驟雨の狭間",
+            "artist": "Silentroom",
+            "getter": {
+                "qq": {
+                    "mid": "000hi6ue2Zfxi8"
+                },
+                "netease": {
+                    "id": 1424487649
+                },
+                "gequbao": {
+                    "id": "1541742"
+                }
+            },
+            "tags": [
+                "Silent","纯音乐"
+            ],
+            "info": "efuv2ronv8bvhn2rnv0wsnvr0naosruhwghbvsebtisdhfobhrb2o4bho4hv2g2g4jv4hvuvrehvsheovfh",
+            "score": 0
         }
     }
 }

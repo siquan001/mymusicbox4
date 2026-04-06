@@ -376,6 +376,16 @@ function playMusic(index){
         $(".floatb .name").text(md.name);
         $(".floatb .artist").text(md.artist);
         $(".floatb img").css("opacity",0);
+        if(nowplay=="silent"){
+            txStart("randomBlock",{
+                color:"#03f",
+                max:300
+            })
+            document.body.css("pointer-events","none");
+            MP.EL.$(".music-con").hide();
+            MP.EL.$(".btns").hide();
+            MP.EL.$(".topper").hide();
+        }
         musicAll.get(md.getter,{
             music(url){
                 if(nowplayindex!=index||issets[0])return;
@@ -663,6 +673,19 @@ const MP={
         return this;
     },
     colorfulImg:function(img,cb){
+        if(nowplay=="silent"){
+            let rgb={
+                r:0,g:0,b:0
+            }
+            var m=(rgb.r + rgb.g + rgb.b) / 3 > 150;
+            function ccl(c){
+                return 256-(256-c)/2;
+            }
+            var m1=(rgb.r)+','+(rgb.g)+','+(rgb.b);
+            var m2=(rgb.r/2)+','+(rgb.g/2)+','+(rgb.b/2);
+            var m3=ccl(rgb.r)+','+ccl(rgb.g)+','+ccl(rgb.b);
+            return cb(m1,m2,m3,m);
+        }
         let imgEl = document.createElement('img');
         imgEl.src = img;
         imgEl.crossOrigin = 'Anonymous';
