@@ -171,6 +171,7 @@ body.dark *,body.dark *::after,body.dark *::before{
     height: 15%;
     line-height: calc(calc(80 * var(--vh)) * 0.09);
     background-color: rgba(255,255,255,.7);
+    will-change: line-height, height;
     backdrop-filter: blur(20px);
     position: absolute;
     bottom: 0;
@@ -541,6 +542,7 @@ body.dark .back-icon:hover{
     position: relative;
     animation: rotate 24s linear infinite;
     animation-play-state: paused;
+    will-change: transform;
 }
 .musicplayer.playing .controls .cover{
     animation-play-state: running;
@@ -715,6 +717,7 @@ body.dark .back-icon:hover{
     width: 100%;
     position: absolute;
     top: 0;
+    will-change: top;
 }
 .musicplayer .lrcs .lrclist .item{
     opacity: .5;
@@ -728,6 +731,7 @@ body.dark .back-icon:hover{
     line-height: 1.5em;
     min-height: 1.5em;
     transition: font-size .3s,color .3s;
+    will-change: font-size,color;
 }
 .musicplayer .lrcs .lrclist .item .trc{
     opacity: .75;
@@ -735,6 +739,7 @@ body.dark .back-icon:hover{
     font-size: 1em;
     display: none;
     transition: font-size .3s,color .3s;
+    will-change: font-size,color;
 }
 .musicplayer .lrcs .lrclist.trans .item .trc{
     display: block;
@@ -832,6 +837,7 @@ body.dark .back-icon:hover{
     border: #888 solid 2px;
     border-radius: 50%;
     animation: playing 1.5s infinite linear;
+    will-change: opacity,width,height,margin;
   }
   .playing-anim>*:nth-child(2){
     animation-delay: -.6s;
