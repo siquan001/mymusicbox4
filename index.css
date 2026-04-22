@@ -971,3 +971,7 @@ body.dark .floatb{
     object-position: center center;
     filter: blur(40px);
 }
+
+.nopage .page{
+    display: none!important;
+}

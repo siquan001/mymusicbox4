@@ -265,6 +265,16 @@ function resortList(){
 
         it.on("click",function(){
             playMusic(parseInt(this.attr("data-i")));
+            if(nowplay=="silent"){
+                txStart("randomBlock",{
+                    color:"#03f",
+                    max:300
+                })
+                document.body.css("pointer-events","none");
+                MP.EL.$(".music-con").hide();
+                MP.EL.$(".btns").hide();
+                MP.EL.$(".topper").hide();
+            }
         })
     }
 
@@ -376,16 +386,6 @@ function playMusic(index){
         $(".floatb .name").text(md.name);
         $(".floatb .artist").text(md.artist);
         $(".floatb img").css("opacity",0);
-        if(nowplay=="silent"){
-            txStart("randomBlock",{
-                color:"#03f",
-                max:300
-            })
-            document.body.css("pointer-events","none");
-            MP.EL.$(".music-con").hide();
-            MP.EL.$(".btns").hide();
-            MP.EL.$(".topper").hide();
-        }
         musicAll.get(md.getter,{
             music(url){
                 if(nowplayindex!=index||issets[0])return;
@@ -757,9 +757,13 @@ const MP={
     },
     show(){
         this.EL.addClass("show");
+        setTimeout(()=>{
+            document.body.addClass("nopage");
+        },300)
     },
     hide(){
         this.EL.removeClass("show");
+        document.body.removeClass("nopage");
     },
     _init(){
         this.EL.$(".btn.close").on("click",()=>{
