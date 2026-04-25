@@ -31,6 +31,28 @@
             "img":"http://p2.music.126.net/aSi0wx1oE0IqLhqD0OsgeQ==/109951170210194991.jpg"
         }
     },
+    "egg":{
+        "0":{
+            "name":"Future Downloader",
+            "artist":"Kobaryo",
+            "getter":{
+                "netease":{"id":"1960097410"}
+            },
+            "tags":["彩蛋！！！","纯音乐"],
+            "info":"1+9+8+19+98+91-19-18+9",
+            "score":198
+        },
+        "1":{
+            "name":"Hello (BPM) 2021",
+            "artist":"かめりあ",
+            "getter":{
+                "netease":{"id":"1853203689"}
+            },
+            "tags":["彩蛋！！！","纯音乐","山山山山茶花"],
+            "info":"if134oio239f438f23opfr24uijvoifuirgew98grihuguhigrweuingrhuigwrof34oifuiguiweruirushiuhigrhwghuhb4uhguhiguhiguhi2g3huuh233huhu4hu43thu34turhiug24gj2j4rg23uhgtpwehrpgohu34htgw345ht98w3h4tgiwhguihwurtvghwurehvuisaheriohw3oerhgu234h8254hg8245nhg89j4235fjwof85h859ghj354ngbpweubvhns0ergju45jfgo5w4hgowerhgouwtehgeuthguiothguoier",
+            "score":198
+        }
+    },
     "musics":{
         "00001":{
             "name": "心の記憶(feat.Miku)",
@@ -1634,7 +1656,7 @@
                 "S",
                 "phigros"
             ],
-            "info": "-",
+            "info": "神秘198，<span onclick='egg(0)'>这是真的吗？</span>",
             "score": 90
         },
         "00085":{
@@ -2012,7 +2034,7 @@
                 "纯音乐",
                 "UNDERTALE"
             ],
-            "info": "-",
+            "info": "<span onclick='egg(1)'><span style='color:red;'>H</span><span style='color:green;'>E</span><span style='color:yellow;'>L</span><span style='color:blue;'>L</span><span style='color:cyan;'>0</span></span>",
             "score": 80
         },
         "00106":{

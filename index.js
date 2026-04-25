@@ -173,6 +173,29 @@ let sortedDir=1;
 let nowplay=null;
 let nowplayindex=-1;
 
+function egg(id){
+    $("body").css("transition","opacity 2s");
+    $("body").css("opacity","0");
+    setTimeout(()=>{
+        $("body").css("opacity","1");
+        nowlistraw=cloneObj(MList.egg);
+        sortedList=[id];
+        playMusic(0);
+        if(id=="1"){
+            setTimeout(()=>{
+                txStart("randomBlock",{
+                    max:600
+                })
+                txStart("randomLine",{
+                    max:600
+                })
+            },6000)
+            
+        }
+    },2000);
+
+}
+
 function getRandomList(list,n){
     let rlist={};
     let ks=Object.keys(list);
@@ -356,8 +379,14 @@ function playMusic(index){
                 issets[2]=1;
                 if(!lrcstr){
                     MP.setLrc("[00:00.00] 暂无歌词");
+                    MP.EL.addClass("pure");
                 }else{
                     MP.setLrc(lrcstr);
+                    if(lrcstr.indexOf("纯音乐")!=-1){
+                        MP.EL.addClass("pure");
+                    }else{
+                        MP.EL.removeClass("pure");
+                    }
                 }
             },
             trc(transtr){
@@ -516,7 +545,7 @@ const MP={
     setDesc(desc){
         this.st.infos.desc=desc;
         desc=desc||"-";
-        this.EL.$(".tbl.songdesc .value").text(desc);
+        this.EL.$(".tbl.songdesc .value").html(desc);
         return this;
     },
     setTags(tags){
@@ -734,13 +763,15 @@ const MP={
         }
         function d() {
             if(img.indexOf('http')==-1)return cb('rgba(0,0,0,0)', -1);
-            musicAll.ajax('https://uapis.cn/api/v1/image/tobase64',{url: img}).then(function (n) {
-                if (!n) {
-                    cb('rgba(0,0,0,0)', -1);
-                } else {
-                    var base64 = n.base64;
-                    MP.colorfulImg(base64, cb);
-                }
+            fetch("https://uapis.cn/api/v1/image/tobase64?url="+encodeURIComponent(img),{
+                headers:{
+                    "Authorization":"Bearer uapi-bobdfeke8K6D8SdKN6aB-fD0kUxW0eZs2HNaaY9z"
+                },
+            }).then(r=>r.json()).then(n=>{
+                var base64 = n.base64;
+                MP.colorfulImg(base64, cb);
+            }).catch(e=>{
+                cb('rgba(0,0,0,0)', -1);
             })
         }
     },
