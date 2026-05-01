@@ -118,6 +118,8 @@ const musicAll={
                     }
                     let cf=function(reason){
                         clearTimeout(csid);
+                        cf=()=>{}
+                        reqsthens[ri].cf=()=>{}
                         let ks=reqsthens[ri].returns;
                         console.log(reqsthens[ri]);
                         console.warn(`在尝试于 ${pl} 平台的 ${ens[j]} 引擎获取 ${ks.join(',')} 时，出现错误，原因如下`,reason);
@@ -359,33 +361,33 @@ const musicAll={
         name:"siquan",
         support:['img','music','lrc','details'],
         requestFz:[['img','music','lrc','details']],
-        get:async function(details){
-            if(!details.id){
-                throw musicAll.ctErr(0,details,'id');
-            }
-            let url='https://siquan-api.198663.top/api/gequbao';
-            let data={
-                id : details.id,
-            }
-            let result;
-            try{
-                result=await musicAll.ajax(url,data);
-            }catch(e){
-                throw musicAll.ctErr(1,details,e);
-            }
-            if(result.code!=0){
-                throw musicAll.ctErr(2,details,result);
-            }
-            let rd=result.data;
-            return {
-                img:rd.img,
-                music:rd.url,
-                lrc:rd.lrc,
-                details:{
-                    artist:rd.artist,
-                    name:rd.name
+        get:function(details){
+            return new Promise((r,j)=>{
+                if(!details.id){
+                    j(musicAll.ctErr(0,details,'id'));
                 }
-            }
+                if(!window.GM){
+                    j(musicAll.ctErr(0,details,'GM'));
+                }
+                let ifr=GM.createHiddenIfr("https://www.gequbao.com/music/"+details.id);
+                ifr.onload=function(){
+                    GM.postScript(ifr,`setTimeout(()=>{appData.lrc=document.getElementById("content-lrc").innerText;GM.backData("gequbaoData",appData)},2000)`);
+                }
+                GM.listenData("gequbaoData",(data)=>{
+                    ifr.remove();
+                    let rd={
+                        img:data.mp3_cover,
+                        music:data.mp3_url,
+                        lrc:data.lrc,
+                        details:{
+                            artist:data.mp3_author,
+                            name:data.mp3_title
+                        }
+                    }
+                    r(rd);
+                })
+            })
+            
         }
     }
 })();

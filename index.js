@@ -762,17 +762,23 @@ const MP={
             d();
         }
         function d() {
-            if(img.indexOf('http')==-1)return cb('rgba(0,0,0,0)', -1);
-            fetch("https://uapis.cn/api/v1/image/tobase64?url="+encodeURIComponent(img),{
-                headers:{
-                    "Authorization":"Bearer uapi-bobdfeke8K6D8SdKN6aB-fD0kUxW0eZs2HNaaY9z"
-                },
-            }).then(r=>r.json()).then(n=>{
-                var base64 = n.base64;
-                MP.colorfulImg(base64, cb);
-            }).catch(e=>{
-                cb('rgba(0,0,0,0)', -1);
-            })
+            if(img.indexOf('http')==-1)return cb('255,255,255','0,0,0','255,255,255', 1);
+            if(window.GM){
+                GM.xmlhttpRequest({
+                    method: "GET",
+                    url: img,
+                    // blob
+                    responseType:"blob",
+                    onload: function (res){
+                        console.log(res);
+                        let b=res.response;
+                        MP.colorfulImg(URL.createObjectURL(b),cb);
+                    }
+                })
+            }else{
+                cb('255,255,255','0,0,0','255,255,255', 1);
+            }
+            
         }
     },
     on(event,fn){
