@@ -50,7 +50,28 @@
             },
             "tags":["彩蛋！！！","纯音乐","山山山山茶花"],
             "info":"if134oio239f438f23opfr24uijvoifuirgew98grihuguhigrweuingrhuigwrof34oifuiguiweruirushiuhigrhwghuhb4uhguhiguhiguhi2g3huuh233huhu4hu43thu34turhiug24gj2j4rg23uhgtpwehrpgohu34htgw345ht98w3h4tgiwhguihwurtvghwurehvuisaheriohw3oerhgu234h8254hg8245nhg89j4235fjwof85h859ghj354ngbpweubvhns0ergju45jfgo5w4hgowerhgouwtehgeuthguiothguoier",
-            "score":198
+            "score":2021
+        },
+        "2":{
+            "name": "耀斑",
+            "artist": "HOYO-MiX/YMIR",
+            "getter": {
+                "qq": {
+                    "mid": "0032XEmk1aJvq1"
+                },
+                "netease": {
+                    "id": 2722510685
+                }
+            },
+            "tags": [
+                "baby",
+                "我去吧",
+                "我瞬间",
+                "就爱上",
+                "雷神"
+            ],
+            "info": "Oh oh oh oh oh oh oh oh oh~<br>Oh watchin' it burn, ain't got no hesitation",
+            "score": 85
         }
     },
     "musics":{
@@ -2137,6 +2158,24 @@
             ],
             "info": "-",
             "score": 90
+        },
+        "flying":{
+            "name": "希望有羽毛和翅膀",
+            "artist": "知更鸟/HOYO-MiX/Chevy",
+            "getter": {
+                "qq": {
+                    "mid": "004ArOCZ13Lvqo"
+                },
+                "netease": {
+                    "id": 2155423468
+                }
+            },
+            "tags": [
+                "英文",
+                "A"
+            ],
+            "info": "HOYO-MiX，<span onclick='egg(2)'>我瞬间就爱上雷神！</span>",
+            "score": 85
         },
         "silent":{
             "name": "驟雨の狭間",
