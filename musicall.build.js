@@ -479,7 +479,12 @@ const musicAll={
             if(!details[midkey]){
                 throw musicAll.ctErr(0,details,midkey);
             }
-            let url='https://api.vkeys.cn/v2/music/'+(platform=='qq'?'tencent':'netease');
+            let url;
+            if(platform=="qq"){
+                url='https://api.vkeys.cn/music/tencent/song/link';
+            }else{
+                url='https://api.vkeys.cn/v2/music/netease';
+            }
             let res;
             try{
                 res=await musicAll.ajax(url,{
@@ -493,6 +498,13 @@ const musicAll={
                 throw musicAll.ctErr(2,details,res);
             }
             let rd=res.data;
+            if(platform=="qq"){
+                let nb=await musicAll.ajax('https://api.vkeys.cn/music/tencent/song/info',{
+                    mid:details[midkey]
+                })
+                rd=nb.data;
+                rd.url=res.data.url;
+            }
             return {
                 img:rd.cover,
                 music:rd.url,
